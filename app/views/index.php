@@ -6,4 +6,5 @@
 <p><a href="<?php echo controller::url('default', 'test')?>">Test sayfası için tıklayın</a></p>
 <p><a href="<?php echo controller::url('default', 'aaaa')?>">aaaa sayfası için tıklayın</a></p>
 
+<p>deneme</p>
 <?php require VDIR.'/footer.php' ?>
