@@ -4,6 +4,7 @@ class defaultController extends controller
 {
 	/**
 	 * ?url=default/index için aksiyon yazalım
+	 * hdgködjöj
 	 */
 	public function indexAction()
 	{
