@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 
 <head>
     <meta charset="utf-8">
@@ -35,7 +35,7 @@
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
                 <!-- Logo -->
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="./">
                         <!-- Logo icon -->
                         <b><img src="images/logo.png" alt="homepage" class="dark-logo" /></b>
                         <!--End Logo icon -->
@@ -74,8 +74,8 @@
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="ti-user"></i><span class="hide-menu">Oyuncular
                         </span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="email-compose.html">Oyuncu Listesi</a></li>
-                                <li><a href="email-compose.html">Oyuncu Ekleme</a></li>
+                                <li><a href="?url=Oyuncular/OyuncularIndex">Oyuncu Listesi</a></li>
+                                <li><a href="?url=Oyuncular/OyuncuEkleme">Oyuncu Ekleme</a></li>
                             </ul>
                         </li>
 

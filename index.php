@@ -10,9 +10,9 @@ define('URL', 'http://localhost/mvc'); // Sistemin çalışacağı URL
 
 // Veritabanı ayarlamalarını yapıyoruz
 // Eğer ki veritabanı işlemi yapmayacaksak ayarlamak şart değil
-define('DB_DSN', 'mysql:host=localhost;dbname=blog;charset=utf8');
-define('DB_USR', 'root');
-define('DB_PWD', 'root');
+//define('DB_DSN', 'mysql:host=localhost;dbname=sinema;charset=utf8');
+//define('DB_USR', 'root');
+//define('DB_PWD', '');
 
 // Çekirdek sınıflarımızı dahil ediyoruz
 // Bu uygulamanın çalışması için mecburi
@@ -20,6 +20,9 @@ require CORE_DIR.'/app.php';
 require CORE_DIR.'/model.php';
 require CORE_DIR.'/view.php';
 require CORE_DIR.'/controller.php';
+
+include "app/models/oyuncular.php";
+include "connection.php";
 
 // Uygulamamızı oluşturuyoruz
 $app = new app;
