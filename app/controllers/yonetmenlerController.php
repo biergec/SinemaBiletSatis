@@ -1,17 +1,15 @@
 <?php
 
-class defaultController extends controller
+class yonetmenlerController extends controller
 {
 	/**
-	 * ?url=default/index için aksiyon yazalım
-	 * hdgködjöju
+	 * ?url=yonetmenler/index için aksiyon yazalım
 	 */
 	public function indexAction()
 	{
 		// Görünüm dosyasına gönderilecek değişkenler
 		// Görünüm dosyasında $title değişkenini kullanabileceğiz:
-		$data['title'] = 'TF Ana Sayfa';
-		$data['text'] = 'Ana sayfadan merhaba!';
+		$data['title'] = 'Yönetmenler';
 
 		// app/views/index.php görünümünü gösterelim
 		$this->render('index', $data);
@@ -24,14 +22,6 @@ class defaultController extends controller
 	{
 		$data['title'] = 'Test Sayfası';
 		$data['text'] = 'Şu an test sayfasındasınız';
-
-		return $this->render('index', $data);
-	}
-
-	public function aaaaAction()
-	{
-		$data['title'] = 'asdasdsadsadasdasdasdasds Sayfası';
-		$data['text'] = 'Şu an aaaa sayfasındasınız';
 
 		return $this->render('index', $data);
 	}
