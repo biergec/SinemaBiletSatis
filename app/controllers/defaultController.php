@@ -5,6 +5,7 @@ class defaultController extends controller
 	/**
 	 * ?url=default/index için aksiyon yazalım
 	 * hdgködjöj
+	 * olamdı bu bi daha çek bei
 	 */
 	public function indexAction()
 	{
