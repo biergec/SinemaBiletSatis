@@ -8,8 +8,10 @@ class YonetmenlerController extends controller
 	public function YonetmenlerIndexAction()
 	{
 		// Görünüm dosyasına gönderilecek değişkenler
-		$data['title'] = 'Yonetmen Listesi';
-		$data['posts'] = yonetmenler::getAll();
+        $data['title'] = 'Yonetmen Listesi';
+        $data['uyari'] = null;
+        $data['result'] = null;
+		$data['yonetmenler'] = yonetmenler::getAll();
 
 		// app/views/index.php görünümünü gösterelim
 		$this->render('Yonetmenler/YonetmenlerIndex', $data);
@@ -62,6 +64,33 @@ class YonetmenlerController extends controller
         }
 
         return "Yonetmen Kayıt Edildi. -> ".$kayitYonetmenAd." ";       
+    }
+    public function YonetmenSilPostAction()
+	{
+        $yonetmenID = $_POST['YonetmenSil'];
+        $data['uyari'] = null;
+        $data['result'] = null;
+		$data['title'] = 'Yönetmen Sil';
+
+        $db = Db::getInstance();
+        $sorgu = "DELETE FROM yonetmenler WHERE yonetmen_id = '".$yonetmenID."' ";
+
+        
+        try{
+            $req = $db->query($sorgu);
+        }catch(Exception $e)
+        {
+            $data['uyari'] = "Yonetmen Silinemedi"; 
+		    return $this->render('Yonetmenler/YonetmenlerIndex', $data);
+        }
+        finally{
+            $data["yonetmenler"] = yonetmenler::getAll();
+        } 
+
+        
+        
+        $data['result'] = "Yönetmen Silindi"; 
+		return $this->render('Yonetmenler/YonetmenlerIndex', $data);
     }
 
 }
