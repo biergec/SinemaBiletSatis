@@ -87,11 +87,19 @@
                             </ul>
                         </li>
 
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="ti-video-clapper"></i><span class="hide-menu">Kategoriler
+                      <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="ti-video-clapper"></i><span class="hide-menu">Kategoriler
                         </span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="?url=Kategoriler/KategorilerIndex">Kayegori Listesi</a></li>
                                 <li><a href="?url=Kategoriler/KategoriEkleme">Kategori Ekleme</a></li>
+                  
+                              
+                              <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="ti-video-clapper"></i><span class="hide-menu">Film Türleri İşlemleri
+                        </span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="?url=FilmTurleri/FilmTurleri">Film Türleri Listesi</a></li>
+                                <li><a href="?url=FilmTurleri/FilmTuruEkle">Yeni Film Türü Ekle</a></li>
+
                             </ul>
                         </li>
 
