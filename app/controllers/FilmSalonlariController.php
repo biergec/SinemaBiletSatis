@@ -30,7 +30,7 @@ class FilmSalonlariController extends controller
         $sinemaSalonAd = trim($_POST['SinemaSalonAdi']);
         $sinemaSalonKoltukSayisi = trim($_POST['SinemaSalonKoltukSayisi']);
 
-        if(strlen($sinemaSalonAd)<=0 && !$sinemaSalonAd && !$sinemaSalonAd && $sinemaSalonAd<=0  ){
+        if(strlen($sinemaSalonAd)<=0 || !$sinemaSalonAd ){
             $data['uyari'] = 'Lütfen Tüm Bilgileri Doldurunuz';
 		    return $this->render('FilmSalonlari/salonEkleme', $data);
         }
