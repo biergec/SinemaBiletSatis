@@ -2,26 +2,19 @@
 <?php require VDIR.'/header.php' ?>
 
 <div class="container">
-  <div class="row">
-    <div class="col-md-6">
-        
-    </div>
-  </div>
-</div>
-
-<div class="container">
         <div class="row">
-            <div class="col-sm-6" style="overflow-y: scroll;height:500px" >
+            <div class="col-sm-6">
             <div class="card" >
             <div class="card-body">
                       <div class="table-responsive" style="align:left">
                           <table class="table table-hover ">
-                              <?php foreach($posts  as $yonetmen) { ?>
+                              <?php foreach($KategoriTuru  as $kategori) { ?>
                                       <tr>
                                           <td>
-                                          <?php echo $yonetmen->yonetmenAd; ?>
+                                          <?php echo $kategori->kategoriAd; ?>
                                           </td>
                                           <td>
+                                          <button type="Submit" value="Kaydet" class="btn btn-primary">Sil</button>
                                           </td>
                                       </tr>
                                 <?php } ?>
@@ -34,10 +27,10 @@
             <div class="col-sm-6">
               <br>
                 <div class="alert alert-info" role="alert">
-                    Yönetmen listesi yan tarafta yer almaktadır.
+                    Kategori listesi yan tarafta yer almaktadır.
                 </div>
                 <div class="alert alert-info" role="alert">
-                   Yönetmen eklemek için Yönetmen Ekle Menüsünü kullanabilirisin.z
+                Kategori eklemek için Kategori Ekle Menüsünü kullanabilirisin.z
                 </div>
             </div>
         </div>

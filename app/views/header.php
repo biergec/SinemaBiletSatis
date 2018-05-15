@@ -87,11 +87,11 @@
                             </ul>
                         </li>
 
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="ti-video-clapper"></i><span class="hide-menu">Sinema Salonları
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="ti-video-clapper"></i><span class="hide-menu">Kategoriler
                         </span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="email-compose.html">Salon Listesi</a></li>
-                                <li><a href="email-compose.html">Salon Ekleme</a></li>
+                                <li><a href="?url=Kategoriler/KategorilerIndex">Kayegori Listesi</a></li>
+                                <li><a href="?url=Kategoriler/KategoriEkleme">Kategori Ekleme</a></li>
                             </ul>
                         </li>
 

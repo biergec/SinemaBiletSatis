@@ -11,7 +11,7 @@
 
 <div class="container">
         <div class="row">
-            <div class="col-sm-6" style="overflow: scroll;width:10px" >
+            <div class="col-sm-6" style="overflow-y: scroll;height:500px" >
             <div class="card" >
             <div class="card-body">
                       <div class="table-responsive" style="align:left">
