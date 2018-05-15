@@ -10,6 +10,8 @@ class OyuncularController extends controller
 		// Görünüm dosyasına gönderilecek değişkenler
 		$data['title'] = 'Oyuncu Listesi';
 		$data['posts'] = oyuncular::getAll();
+        $data['result'] = null;
+        $data['uyari'] = null;
 
 		// app/views/index.php görünümünü gösterelim
 		$this->render('Oyuncular/OyuncularIndex', $data);
@@ -24,6 +26,30 @@ class OyuncularController extends controller
 		return $this->render('Oyuncular/OyuncuEkle', $data);
     }
     
+    public function OyuncuSilPostAction()
+	{
+        $data['uyari'] = null;
+        $data['result'] = null;
+
+        $kayitOyuncuID = $_POST['OyuncuSil'];
+        
+        $db = Db::getInstance();
+        $sorgu = "DELETE FROM oyuncular WHERE oyuncu_id = '".$kayitOyuncuID."' ";
+        try{
+            $req = $db->query($sorgu);
+        }catch(Exception $e)
+        {
+            $data['uyari'] = "Oyuncu Silinemedi"; 
+		    return $this->render('Oyuncular/OyuncularIndex', $data);
+        }finally{
+		    $data['posts'] = oyuncular::getAll();
+        }
+
+        $data['result'] = "Oyuncu Silindi"; 
+
+		return $this->render('Oyuncular/OyuncularIndex', $data);
+    }
+
     public function OyuncuEklemePostAction()
 	{
         $data['title'] = 'Oyuncu Ekleme';

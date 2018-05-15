@@ -92,9 +92,10 @@
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="?url=Kategoriler/KategorilerIndex">Kayegori Listesi</a></li>
                                 <li><a href="?url=Kategoriler/KategoriEkleme">Kategori Ekleme</a></li>
-                  
-                              
-                              <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="ti-video-clapper"></i><span class="hide-menu">Film Türleri İşlemleri
+                            </ul>
+                        </li>
+                        
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="ti-video-clapper"></i><span class="hide-menu">Film Türleri İşlemleri
                         </span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="?url=FilmTurleri/FilmTurleri">Film Türleri Listesi</a></li>
@@ -103,6 +104,14 @@
                             </ul>
                         </li>
 
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="ti-video-clapper"></i><span class="hide-menu">Sinema Salon İşlemleri
+                        </span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="?url=FilmSalonlari/FilmSalonlari">Salon Listesi</a></li>
+                                <li><a href="?url=FilmSalonlari/FilmSalonEkle">Yeni Sinema Salonu Ekle</a></li>
+
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
