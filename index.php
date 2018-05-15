@@ -28,6 +28,7 @@ include "app/models/kullaniciler.php";
 include "app/models/kategoriler.php";
 include "app/models/filmTurleri.php";
 include "app/models/PNR.php";
+include "app/models/film.php";
 include "connection.php";
 
 // Uygulamamızı oluşturuyoruz
