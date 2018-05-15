@@ -1,32 +1,31 @@
 <?php
 
-class KullanicilarController extends controller
+class OyuncularController extends controller
 {
 	/**
 	 * ?url=oyuncular/index için aksiyon yazalım
 	 */
-	public function KullanicilarIndexAction()
+	public function OyuncularIndexAction()
 	{
 		// Görünüm dosyasına gönderilecek değişkenler
-		$data['title'] = 'Oyuncu Listesi';
-		$data['posts'] = oyuncular::getAll();
+		$data['posts'] = kullaniciler::getAll();
 
 		// app/views/index.php görünümünü gösterelim
-		$this->render('Oyuncular/OyuncularIndex', $data);
+		//$this->render('Oyuncular/OyuncularIndex', $data);
 	}
 
 	public function OyuncuEklemeAction()
 	{
-        $data['title'] = 'Oyuncu Ekleme';
+        //$data['title'] = 'Oyuncu Ekleme';
         $data['uyari'] = null;
         $data['result'] = null;
 
-		return $this->render('Oyuncular/OyuncuEkle', $data);
+		//return $this->render('Oyuncular/OyuncuEkle', $data);
     }
     
     public function OyuncuEklemePostAction()
 	{
-        $data['title'] = 'Oyuncu Ekleme';
+        //$data['title'] = 'Oyuncu Ekleme';
         $data['result'] = null;
         $data['uyari'] = null;
 

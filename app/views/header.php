@@ -82,8 +82,8 @@
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="ti-camera"></i><span class="hide-menu">Yönetmenler
                         </span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="email-compose.html">Yönetmen Listesi</a></li>
-                                <li><a href="email-compose.html">Yönetmen Ekleme</a></li>
+                                <li><a href="?url=Yonetmenler/YonetmenlerIndex">Yönetmen Listesi</a></li>
+                                <li><a href="?url=Yonetmenler/YonetmenEkleme">Yönetmen Ekleme</a></li>
                             </ul>
                         </li>
 

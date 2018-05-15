@@ -1,28 +1,67 @@
 <?php
 
-class yonetmenlerController extends controller
+class YonetmenlerController extends controller
 {
 	/**
 	 * ?url=yonetmenler/index için aksiyon yazalım
 	 */
-	public function indexAction()
+	public function YonetmenlerIndexAction()
 	{
 		// Görünüm dosyasına gönderilecek değişkenler
-		// Görünüm dosyasında $title değişkenini kullanabileceğiz:
-		$data['title'] = 'Yönetmenler';
+		$data['title'] = 'Yonetmen Listesi';
+		$data['posts'] = yonetmenler::getAll();
 
 		// app/views/index.php görünümünü gösterelim
-		$this->render('index', $data);
+		$this->render('Yonetmenler/YonetmenlerIndex', $data);
 	}
 
-	/**
-	 * ?url=default/test için aksiyon yazalım
-	 */
-	public function testAction()
+	public function YonetmenEklemeAction()
 	{
-		$data['title'] = 'Test Sayfası';
-		$data['text'] = 'Şu an test sayfasındasınız';
+        $data['title'] = 'Yonetmen Ekleme';
+        $data['uyari'] = null;
+        $data['result'] = null;
 
-		return $this->render('index', $data);
+		return $this->render('Yonetmenler/YonetmenEkle', $data);
+    }
+    
+    public function YonetmenEklemePostAction()
+	{
+        $data['title'] = 'Yonetmen Ekleme';
+        $data['result'] = null;
+        $data['uyari'] = null;
+
+        $kayitYonetmenAd = $_POST['yonetmenAd'];
+        $kayitYonetmenSoyad =$_POST['yonetmenSoyad'];
+
+        $kayitYonetmenAd =trim($kayitYonetmenAd);
+        $kayitYonetmenSoyad =trim($kayitYonetmenSoyad);
+
+        if(strlen($kayitYonetmenAd)<=0 && !$kayitYonetmenAd && strlen($kayitYonetmenSoyad)<=0 && !$kayitYonetmenSoyad){
+            $data['uyari'] = 'Yonetmen Adı ve Soyadı Boş Olamaz';
+		    return $this->render('Yonetmenler/YonetmenEkle', $data);
+        }
+        
+        $YonetmenTamAd ="$kayitYonetmenAd $kayitYonetmenSoyad";
+ 		if($kayitYonetmenAd && $kayitYonetmenSoyad){
+            $result = $this ->YonetmenDatabaseKayit($YonetmenTamAd);
+            $data['result'] = $result;
+        }
+        
+		return $this->render('Yonetmenler/YonetmenEkle', $data);
 	}
+    
+	private function YonetmenDatabaseKayit($kayitYonetmenAd)
+	{
+        $db = Db::getInstance();
+        $sorgu = "INSERT INTO yonetmenler (YonetmenAd) VALUES ( '".$kayitYonetmenAd."' )";
+        try{
+            $req = $db->query($sorgu);
+        }catch(Exception $e)
+        {
+            return "Aynı Yonetmen Birden Fazla Kayıt Edilemez -> ".$kayitYonetmenAd." ";       
+        }
+
+        return "Yonetmen Kayıt Edildi. -> ".$kayitYonetmenAd." ";       
+    }
+
 }

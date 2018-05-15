@@ -1,14 +1,13 @@
 <?php
-
-class oyuncular
+class yonetmenler
 {
-	public $oyuncuAd;
-	public $oyuncu_id;
+	public $yonetmenAd;
+	public $yonetmen_id;
 
-	public function oyuncular($oyuncuAd, $oyuncu_id)
+	public function yonetmenler($yonetmenAd, $yonetmen_id)
 	{
-		$this->oyuncuAd = $oyuncuAd;
-		$this->oyuncu_id = $oyuncu_id;
+		$this->yonetmenAd = $yonetmenAd;
+		$this->yonetmen_id = $yonetmen_id;
 	}
 
 	/**
@@ -19,21 +18,19 @@ class oyuncular
 
 	public function All()
 	{
-		return $this->fetchAll('SELECT * FROM oyuncular');
+		return $this->fetchAll('SELECT * FROM yonetmenler');
 	}
 	
 	public static function getAll() {
 		$list = [];
 		$db = Db::getInstance();
-		$req = $db->query('SELECT * FROM oyuncular');
+		$req = $db->query('SELECT * FROM yonetmenler');
   
 		// we create a list of Post objects from the database results
 		foreach($req->fetchAll() as $post) {
-		  $list[] = new oyuncular($post['oyuncuAd'],$post['oyuncu_id']);
+		  $list[] = new yonetmenler($post['yonetmenAd'],$post['yonetmen_id']);
 		}
 
 		return $list;
 	  }
 }
-
-
