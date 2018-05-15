@@ -87,11 +87,11 @@
                             </ul>
                         </li>
 
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="ti-video-clapper"></i><span class="hide-menu">Sinema Salonları
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="ti-video-clapper"></i><span class="hide-menu">Film Türleri İşlemleri
                         </span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="email-compose.html">Salon Listesi</a></li>
-                                <li><a href="email-compose.html">Salon Ekleme</a></li>
+                                <li><a href="?url=FilmTurleri/FilmTurleri">Film Türleri Listesi</a></li>
+                                <li><a href="?url=FilmTurleri/FilmTuruEkle">Yeni Film Türü Ekle</a></li>
                             </ul>
                         </li>
 

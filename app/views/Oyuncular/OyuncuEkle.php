@@ -1,4 +1,3 @@
-
 <?php require VDIR.'/header.php' ?>
 
 <form action="./?url=Oyuncular/OyuncuEklemePost" method="Post">

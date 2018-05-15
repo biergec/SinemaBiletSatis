@@ -24,6 +24,8 @@ require CORE_DIR.'/controller.php';
 include "app/models/oyuncular.php";
 include "app/models/yonetmenler.php";
 include "app/models/kullaniciler.php";
+include "app/models/filmTurleri.php";
+
 include "connection.php";
 
 // Uygulamamızı oluşturuyoruz

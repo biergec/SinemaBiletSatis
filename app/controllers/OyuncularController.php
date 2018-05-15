@@ -1,11 +1,11 @@
 <?php
 
-class KullanicilarController extends controller
+class OyuncularController extends controller
 {
 	/**
 	 * ?url=oyuncular/index için aksiyon yazalım
 	 */
-	public function KullanicilarIndexAction()
+	public function OyuncularIndexAction()
 	{
 		// Görünüm dosyasına gönderilecek değişkenler
 		$data['title'] = 'Oyuncu Listesi';
