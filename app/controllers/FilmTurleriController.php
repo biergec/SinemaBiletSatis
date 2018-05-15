@@ -28,7 +28,7 @@ class FilmTurleriController extends controller
         $data['result'] = null;
         $data['uyari'] = null;
 
-        $kayitFilmTur = $_POST['FilmTur'];
+        $kayitFilmTur = trim($_POST['FilmTur']);
 
         if(strlen($kayitFilmTur)<=0 && !$kayitFilmTur){
             $data['uyari'] = 'Film Türü Bilgisi Bol Olamaz';
@@ -49,12 +49,12 @@ class FilmTurleriController extends controller
         $sorgu = "INSERT INTO film_turleri (filmTurAd) VALUES ( '".$filmTuru."' )";
         try{
             $req = $db->query($sorgu);
+
+            return "Film Türü Kayıt Edildi. -> ".$filmTuru." ";       
         }catch(Exception $e)
         {
             return "Aynı Film Türü Birden Fazla Kayıt Edilemez -> ".$filmTuru." ";       
         }
-
-        return "Film Türü Kayıt Edildi. -> ".$filmTuru." ";       
     }
 
     public function FilmTuruSilPostAction()

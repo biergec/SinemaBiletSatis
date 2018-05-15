@@ -1,9 +1,8 @@
-
 <?php require VDIR.'/header.php' ?>
 
 <div class="container">
         <div class="row">
-            <div class="col-sm-6" style="overflow-y: scroll;height:500px" >
+            <div class="col-sm-6" >
             <?php 
                         if($uyari){
                             echo $uyari;
@@ -23,36 +22,46 @@
             <div class="card-body">
                       <div class="table-responsive" style="align:left">
                           <table class="table table-hover ">
-                              <?php foreach($posts  as $oyuncu) { ?>
+                          <thead>
+                                <tr>
+                                    <th>Salon Adı</th>
+                                    <th>Koltuk Sayısı</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                              <?php foreach($filmSalonlari as $salonListesi) { ?>
                                       <tr>
                                           <td>
-                                          <?php echo $oyuncu->oyuncuAd; ?>
+                                          <?php echo $salonListesi->salonAdi; ?>
                                           </td>
                                           <td>
-                                            <form action="./?url=Oyuncular/OyuncuSilPost" method="Post">
-                                            <button type="Submit" name="OyuncuSil" value=<?php echo $oyuncu->oyuncu_id; ?> class="btn btn-primary">Sil</button>
+                                          <?php echo $salonListesi->koltukSayisi; ?>
+                                          </td>
+                                          <td>
+                                            <form action="./?url=FilmSalonlari/SinemaSalonSilPost" method="Post">
+                                            <button type="Submit" name="SinemaSalonID" value=<?php echo $salonListesi->salon_id; ?> class="btn btn-primary">Sil</button>
                                             </form> 
                                           </td>
                                       </tr>
                                 <?php } ?>
                           </table>
                       </div>
-                       <br>
+                      <br>
                      
-            </div>
-                  
+        </div>
                 </div>
             </div>
             <div class="col-sm-6">
               <br>
                 <div class="alert alert-info" role="alert">
-                    Oyuncu listesi yan tarafta yer almaktadır.
+                    Sinema Salon listesi yan tarafta yer almaktadır.
                 </div>
                 <div class="alert alert-info" role="alert">
-                   Oyuncu eklemek için Oyuncu Ekle Menüsünü kullanabilirisin.z
+                    Yeni Sinema Salon bilgisi eklemek için Salon Ekle Menüsünü kullanabilirisiniz.
                 </div>
             </div>
         </div>
     </div>
 
 <?php require VDIR.'/footer.php' ?>
+
