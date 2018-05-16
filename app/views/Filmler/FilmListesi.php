@@ -18,7 +18,7 @@
 
                         ?>
                         <br>
-            <div class="card" >
+            <div class="card"  style="weight:auto">
             <div class="card-body">
                       <div class="table-responsive" style="align:left">
                           <table class="table table-hover ">
@@ -73,7 +73,7 @@
 
                                           <td>
 
-                                          <select>
+                                          <select class="custom-select">
                                           <?php
                                             $db = Db::getInstance();
                                             $req = $db->query("SELECT oyuncuAd FROM oyuncular WHERE oyuncu_id IN
@@ -93,15 +93,18 @@
                                           </td>
                                           <td>
                                           <form action="./?url=Film/FilmSilPost" method="Post">
-                                            <button type="Submit" name="FilmAd" value=<?php echo $filmler->filmAd; ?> class="btn btn-primary">Sil</button>
+                                            <button type="Submit" id="FilmAd" name="FilmAd" value="<?php echo $filmler->filmAd; ?>"class="btn btn-primary">Sil</button>
                                             </form>
                                           </td>
                                           
                                       </tr>
                                 <?php } ?>
                           </table>
+
+                          
                       </div>
                       <br>
+                      
                      
         </div>
                 </div>

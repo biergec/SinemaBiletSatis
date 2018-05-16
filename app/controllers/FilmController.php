@@ -108,7 +108,7 @@ class FilmController extends controller
             $data["film"] = film::getAll();
         }
 
-        $data['result'] = "Film Silindi"; 
+        $data['result'] =  "Film Silindi"; 
 		return $this->render('Filmler/FilmListesi', $data);
     }
 

@@ -70,11 +70,13 @@ class FilmSalonlariController extends controller
             $req = $db->query($sorgu);
         }catch(Exception $e)
         {
-            $data['uyari'] = "Sinema Salon Silinemedi"; 
-		    return $this->render('FilmSalonlari/salonListesi', $data);
-        }finally{
             $data["filmSalonlari"] = filmSalonlari::getAll();
+            
+            $data['uyari'] = "Sinema Kullanıldığı için Silinemez"; 
+		    return $this->render('FilmSalonlari/salonListesi', $data);
         }
+        $data["filmSalonlari"] = filmSalonlari::getAll();
+        
 
         $data['result'] = "Sinema Salon Silindi"; 
 		return $this->render('FilmSalonlari/salonListesi', $data);
