@@ -70,11 +70,31 @@
                                            $name = $req->fetch(PDO::FETCH_ASSOC);
                                            echo $name['kategoriAd'];?>
                                           </td>
+
                                           <td>
-                                          <?php ?>
+
+                                          <select>
+                                          <?php
+                                            $db = Db::getInstance();
+                                            $req = $db->query("SELECT oyuncuAd FROM oyuncular WHERE oyuncu_id IN
+                                            (SELECT oyuncu_id FROM film_oyuncular WHERE film_id IN
+                                            (SELECT film_id FROM filmler where filmAd='".$filmler->filmAd."'))");?>
+                                            <OPTION><?php echo "Oyuncular";?></OPTION><?php
+                                            foreach($req->fetchAll() as $oyuncuAd) {?>
+                                                <OPTION disabled><?php echo $oyuncuAd['oyuncuAd'];?></OPTION>
+                                            <?php
+                                            } 
+                                            ?>
+                                            </select>
+
                                           </td>
                                           <td>
                                           <?php echo $filmler->filmOzet; ?>
+                                          </td>
+                                          <td>
+                                          <form action="./?url=Film/FilmSilPost" method="Post">
+                                            <button type="Submit" name="FilmAd" value=<?php echo $filmler->filmAd; ?> class="btn btn-primary">Sil</button>
+                                            </form>
                                           </td>
                                           
                                       </tr>

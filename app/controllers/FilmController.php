@@ -11,6 +11,8 @@ class FilmController extends controller
         $data["yonetmenler"] = yonetmenler::getAll();
         $data["filmTurleri"] = filmTurleri::getAll();
         $data["oyuncular"] = oyuncular::getAll();
+        $data['film'] = film::getAll();
+        
         
         $this->render('Filmler/FilmEkle', $data);
 	}
@@ -51,25 +53,26 @@ class FilmController extends controller
             $result = $this ->FilmDatabaseKayit($kategorilerID,$yonetmenlerID,$filmTurleriID,$filmAdi,$filmSuresi,
             $filmOzet,$vizyonTarihi,$filmFiyati);
             $data['result'] = $result;
+
+
+
+            $db = Db::getInstance();
+            $req = $db->query("SELECT film_id FROM filmler where filmAd='".$filmAdi."'");
+            $name = $req->fetch(PDO::FETCH_ASSOC);
+    
+            foreach ($oyuncularID as $oyuncu)
+            {
+                $sorgu = "INSERT INTO film_oyuncular (film_id,oyuncu_id) 
+                VALUES ( ".(int)$name['film_id'].",".(int)$oyuncu.")";
+                try{
+                    $req = $db->query($sorgu);
+                }catch(Exception $e)
+                { 
+                    $data['result'] = $e;
+                }
+            }
             return $this->render('Filmler/FilmEkle', $data);
         }
-
-       /* $db = Db::getInstance();
-        $req = $db->query("SELECT film_id FROM filmler where filmAd='".$filmAdi."'");
-        $name = $req->fetch(PDO::FETCH_ASSOC);
-
-        foreach ($oyuncularID as $oyuncu)
-        {
-            $sorgu = "INSERT INTO film_oyuncular (film_id,oyuncu_id) 
-            VALUES ( ".(int)$name['film_id'].",".(int)$oyuncu_id.")";
-            try{
-                $req = $db->query($sorgu);
-            }catch(Exception $e)
-            { 
-                $data['result'] = $e;
-            }
-        }*/
-
 	}
     
 	private function FilmDatabaseKayit($kategorilerID,$yonetmenlerID,$filmTurleriID,$filmAdi,$filmSuresi,$filmOzet,$vizyonTarihi,$filmFiyati)
@@ -82,19 +85,19 @@ class FilmController extends controller
             return "Film Kayıt Edildi. -> ".$filmAdi." ";       
         }catch(Exception $e)
         {
-            return "Film Kayıt Edilemedi. Aynı İsimde Birden Fazla Film Kayıt Edilemez.-> ".(int)$filmTurleriID." ";       
+            return "Film Kayıt Edilemedi. Aynı İsimde Birden Fazla Film Kayıt Edilemez.-> ".$filmAdi." ";       
         }
     }
 
     public function FilmSilPostAction()
 	{
-        $FilmID = $_POST['FilmID'];
+        $FilmAd = $_POST['FilmAd'];
         $data['uyari'] = null;
         $data['result'] = null;
 		$data['title'] = 'Film Listesi';
 
         $db = Db::getInstance();
-        $sorgu = "DELETE FROM filmler WHERE film_id = '".$FilmID."' ";
+        $sorgu = "DELETE FROM filmler WHERE filmAd = '".$FilmAd."' ";
         try{
             $req = $db->query($sorgu);
         }catch(Exception $e)

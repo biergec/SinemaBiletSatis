@@ -51,11 +51,9 @@
               <label for="labelsalon">Film Türü</label>
             <select class="custom-select" id="filmTurleriID" name="filmTurleriID">
             <option name="filmTurleriID" selected>Tür Seciniz</option>
-            
-                <option value="2D" > 2D </option>
-                <option   value="3D" > 3D </option>
-                <option value="IMAX" > IMAX </option>
-               
+            <?php foreach($filmTurleri as $filmTurleri) { ?>
+                <option value=<?php echo $filmTurleri->tur_id; ?> > <?php echo $filmTurleri->filmTurAd; ?> </option>
+                <?php } ?>
               </select>
 
                 <br>
