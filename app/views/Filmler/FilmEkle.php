@@ -1,6 +1,5 @@
 <?php require VDIR.'/header.php' ?>
 
-
             <?php 
             if($uyari){
                 echo $uyari;
@@ -46,7 +45,6 @@
 
               <br>
               <br>
-                
 
               <label for="labelsalon">Film Türü</label>
             <select class="custom-select" id="filmTurleriID" name="filmTurleriID">
@@ -58,7 +56,6 @@
 
                 <br>
               <br>
-
 
               <label for="labelsalon">Film Yönetmeni</label>
             <select class="custom-select" id="yonetmenlerID" name="yonetmenlerID">
@@ -74,8 +71,6 @@
             
             </div>
             </div>
-       
-
         
         <div class="col-md-6"  style="overflow-y">
             <div><label for="labelsalon">Oyuncuları Seciniz</label>
@@ -88,11 +83,8 @@
             </fieldset>
         </div>
 
-
         </form> 
         
-        
-
  </div>
 
 <hr>
@@ -101,4 +93,5 @@
   echo $result;
 }
 ?>
+
 <?php require VDIR.'/footer.php' ?>
