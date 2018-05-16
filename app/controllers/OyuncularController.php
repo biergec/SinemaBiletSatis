@@ -39,14 +39,15 @@ class OyuncularController extends controller
             $req = $db->query($sorgu);
         }catch(Exception $e)
         {
-            $data['uyari'] = "Oyuncu Silinemedi"; 
+		    $data['posts'] = oyuncular::getAll();
+            
+            $data['uyari'] = "Oyuncu Kullanıldığı için silinemez"; 
 		    return $this->render('Oyuncular/OyuncularIndex', $data);
         }finally{
-		    $data['posts'] = oyuncular::getAll();
         }
-
+		$data['posts'] = oyuncular::getAll();
+        
         $data['result'] = "Oyuncu Silindi"; 
-
 		return $this->render('Oyuncular/OyuncularIndex', $data);
     }
 

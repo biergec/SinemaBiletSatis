@@ -79,13 +79,11 @@ class KategorilerController extends controller
             $req = $db->query($sorgu);
         }catch(Exception $e)
         {
-            $data['uyari'] = "Kategori Silinemedi"; 
+            $data["KategoriTuru"] = kategoriler::getAll();
+            $data['uyari'] = "Kategori Kullanıldığı için silinemedi"; 
 		    return $this->render('Kategoriler/KategorilerIndex', $data);
         }
-        finally{
-            $data["KategoriTuru"] = kategoriler::getAll();
-        } 
-
+        $data["KategoriTuru"] = kategoriler::getAll();
         
         
         $data['result'] = "Kategori Silindi"; 

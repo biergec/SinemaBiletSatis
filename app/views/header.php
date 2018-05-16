@@ -119,7 +119,15 @@
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="?url=FilmSalonlari/FilmSalonlari">Salon Listesi</a></li>
                                 <li><a href="?url=FilmSalonlari/FilmSalonEkle">Yeni Sinema Salonu Ekle</a></li>
+                            </ul>
+                        </li>
 
+
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="ti-video-clapper"></i><span class="hide-menu">Film İşlemleri
+                        </span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="?url=Film/FilmListesi">Film Listesi</a></li>
+                                <li><a href="?url=Film/FilmEkle">Film Ekle</a></li>
                             </ul>
                         </li>
                     </ul>
