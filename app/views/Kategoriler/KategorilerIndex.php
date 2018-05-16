@@ -7,7 +7,10 @@
             <div class="card-body">
                       <div class="table-responsive" style="align:left">
                           <table class="table table-hover ">
-                              <?php foreach($KategoriTuru as $kategoriler) { ?>
+                              <?php 
+                              if($KategoriTuru){
+                              
+                              foreach($KategoriTuru as $kategoriler) { ?>
                                       <tr>
                                           <td>
                                           <?php echo $kategoriler->kategoriAd; ?>
@@ -18,7 +21,7 @@
                                             </form> 
                                           </td>
                                       </tr>
-                                <?php } ?>
+                                <?php }?> <?php }?>
                           </table>
                       </div>
                       <br>

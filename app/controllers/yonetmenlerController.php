@@ -80,14 +80,11 @@ class YonetmenlerController extends controller
             $req = $db->query($sorgu);
         }catch(Exception $e)
         {
-            $data['uyari'] = "Yonetmen Silinemedi"; 
+            $data["yonetmenler"] = yonetmenler::getAll();
+            $data['uyari'] = "Yonetmen Kullanıldığı için silinemez"; 
 		    return $this->render('Yonetmenler/YonetmenlerIndex', $data);
         }
-        finally{
-            $data["yonetmenler"] = yonetmenler::getAll();
-        } 
-
-        
+        $data["yonetmenler"] = yonetmenler::getAll();
         
         $data['result'] = "Yönetmen Silindi"; 
 		return $this->render('Yonetmenler/YonetmenlerIndex', $data);
