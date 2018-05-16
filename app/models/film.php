@@ -1,5 +1,4 @@
 <?php
-
 class film
 {
 	public $film_id;
@@ -11,7 +10,6 @@ class film
     public $vizyonTarihi;
 	public $filmTuru_id;
     public $filmFiyat;
-
 	public function film($film_id, $kategori_id, $filmAd,$filmSuresi, $yonetmen_id, $filmOzet,$vizyonTarihi, $filmTuru_id, $filmFiyat)
 	{
 		$this->film_id = $film_id;

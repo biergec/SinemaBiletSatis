@@ -21,6 +21,7 @@ require CORE_DIR.'/model.php';
 require CORE_DIR.'/view.php';
 require CORE_DIR.'/controller.php';
 
+include "app/models/vizyondakiFilmler.php";
 include "app/models/filmSalonlari.php";
 include "app/models/oyuncular.php";
 include "app/models/yonetmenler.php";

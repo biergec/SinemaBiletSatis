@@ -122,7 +122,6 @@
                             </ul>
                         </li>
 
-
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="ti-video-clapper"></i><span class="hide-menu">Film İşlemleri
                         </span></a>
                             <ul aria-expanded="false" class="collapse">
@@ -130,6 +129,15 @@
                                 <li><a href="?url=Film/FilmEkle">Film Ekle</a></li>
                             </ul>
                         </li>
+
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="ti-video-clapper"></i><span class="hide-menu">Film Vizyon İşlemleri
+                        </span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="?url=FilmVizyonaAlmaIslemleri/VizyondakilerFilmListesi">Vizyondakiler Film Listesi</a></li>
+                                <li><a href="?url=FilmVizyonaAlmaIslemleri/VizyondakilerFilmEkle">Vizyondakiler Film Ekle</a></li>
+                            </ul>
+                        </li>
+
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->

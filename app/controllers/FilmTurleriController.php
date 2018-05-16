@@ -70,7 +70,7 @@ class FilmTurleriController extends controller
             $req = $db->query($sorgu);
         }catch(Exception $e)
         {
-            $data['uyari'] = "Film Türü Silinemedi"; 
+            $data['uyari'] = "Film Türü Kullanıldığı İçin Silinemedi"; 
 		    return $this->render('FilmTurleri/FilmTurListesi', $data);
         } 
 

@@ -13,10 +13,8 @@ class FilmController extends controller
         $data["oyuncular"] = oyuncular::getAll();
         $data['film'] = film::getAll();
         
-        
         $this->render('Filmler/FilmEkle', $data);
 	}
-
 
     public function FilmEklePostAction()
 	{
@@ -39,9 +37,6 @@ class FilmController extends controller
         $vizyonTarihi = $_POST['vizyonTarihi'];
         $filmFiyati = $_POST['filmFiyati'];
         
-
-
-
         if(!$kategorilerID ||!$yonetmenlerID ||!$filmTurleriID ||!$oyuncularID ||!$filmAdi ||!$filmSuresi ||
         !$filmOzet ||!$vizyonTarihi ||!$filmFiyati)
         {
@@ -53,8 +48,6 @@ class FilmController extends controller
             $result = $this ->FilmDatabaseKayit($kategorilerID,$yonetmenlerID,$filmTurleriID,$filmAdi,$filmSuresi,
             $filmOzet,$vizyonTarihi,$filmFiyati);
             $data['result'] = $result;
-
-
 
             $db = Db::getInstance();
             $req = $db->query("SELECT film_id FROM filmler where filmAd='".$filmAdi."'");
@@ -111,7 +104,6 @@ class FilmController extends controller
         $data['result'] =  "Film Silindi"; 
 		return $this->render('Filmler/FilmListesi', $data);
     }
-
     public function FilmListesiAction()
 	{
         $data['uyari'] = null;
