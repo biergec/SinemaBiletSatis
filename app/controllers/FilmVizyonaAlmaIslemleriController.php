@@ -11,8 +11,7 @@ class FilmVizyonaAlmaIslemleriController extends controller
         $data['yakindakifilmler'] = yakindakifilmler::getAll();
         $data['filmler'] = film::getAll();
 
-
-		$this->render('Yakindekiler/yakindekilerIndex', $data);
+		$this->render('Yakindakiler/yakindekilerIndex', $data);
 	}
 
 	public function yakindekiFilmlerEklemeAction()
@@ -21,7 +20,7 @@ class FilmVizyonaAlmaIslemleriController extends controller
         $data['uyari'] = null;
         $data['result'] = null;
 
-		return $this->render('Yakindekiler/yakindekiFilmlerEkleme', $data);
+		return $this->render('Yakindakiler/yakindekiFilmlerEkleme', $data);
     }
     
     public function yakindekilerEklemePostAction()
@@ -34,14 +33,14 @@ class FilmVizyonaAlmaIslemleriController extends controller
 
         if(!$film_id){
             $data['uyari'] = 'Boş alan bırakmayın!..';
-		    return $this->render('Yakindekiler/yakindekiFilmlerEkleme', $data);
+		    return $this->render('Yakindakiler/yakindekiFilmlerEkleme', $data);
         }
         
  		if($film_id){
             $result = $this ->yakindekilerKayit($film_id);
             $data['result'] = $result;
         }
-		return $this->render('Yakindekiler/yakindekiFilmlerEkleme', $data);
+		return $this->render('Yakindakiler/yakindekiFilmlerEkleme', $data);
 	}
     
 	private function yakindekilerKayit($film_id)
@@ -75,18 +74,16 @@ class FilmVizyonaAlmaIslemleriController extends controller
         }catch(Exception $e)
         {
             $data['uyari'] = "Yakındaki Film Silinemedi"; 
-		    return $this->render('Yakindekiler/yakindekilerIndex', $data);
+		    return $this->render('Yakindakiler/yakindekilerIndex', $data);
         }
         finally{
             $data["yakindakifilmler"] = yakindakifilmler::getAll();
         } 
 
         $data['result'] = "Yakındaki Film Silindi"; 
-		return $this->render('Yakindekiler/yakindekilerIndex', $data);
+		return $this->render('Yakindakiler/yakindekilerIndex', $data);
     }
 
-}
-=======
     public function VizyondakilerFilmEkleAction()
 	{
         $data['title'] = 'Vizyondakilere Film Ekle';
@@ -105,13 +102,12 @@ class FilmVizyonaAlmaIslemleriController extends controller
         $data['uyari'] = null;
         $data['result'] = null;
 
-        $data["yakindaCikacakFilmler"] = yakindakiFilmler::getAll();
-
         $filmID = $_POST['filmID'];
         
         if(!$filmID)
         {
             $data['uyari'] = 'Lütfen En Az Bir Film Seçiniz.';
+            $data["yakindaCikacakFilmler"] = yakindakiFilmler::getAll();
 
             return $this->render('Yakindakiler/vizyondakiFilmlerEkleme', $data);
         }else{
@@ -132,7 +128,8 @@ class FilmVizyonaAlmaIslemleriController extends controller
                     $data['result'] = $e;
                 }
             }
-
+            
+            $data["yakindaCikacakFilmler"] = yakindakiFilmler::getAll();
             return $this->render('Yakindakiler/vizyondakiFilmlerEkleme', $data);
         }
     }
