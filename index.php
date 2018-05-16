@@ -30,6 +30,8 @@ include "app/models/filmTurleri.php";
 include "app/models/PNR.php";
 include "app/models/film.php";
 include "connection.php";
+include "app/models/yakindakifilmler.php";
+
 
 // Uygulamamızı oluşturuyoruz
 $app = new app;

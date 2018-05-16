@@ -9,7 +9,6 @@
                           <table class="table table-hover ">
                               <?php 
                               if($KategoriTuru){
-                              
                               foreach($KategoriTuru as $kategoriler) { ?>
                                       <tr>
                                           <td>
