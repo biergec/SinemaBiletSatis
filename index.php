@@ -32,6 +32,7 @@ include "app/models/PNR.php";
 include "app/models/film.php";
 include "connection.php";
 include "app/models/yakindakifilmler.php";
+include "app/models/slondakigosterilenfilmler.php";
 
 
 // Uygulamamızı oluşturuyoruz

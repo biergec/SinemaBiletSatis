@@ -26,6 +26,7 @@
                                     <th></th>
                                 </tr>
                             </thead>
+                            if
                               <?php foreach($filmTurleri as $filmTuru) { ?>
                                       <tr>
                                           <td>
