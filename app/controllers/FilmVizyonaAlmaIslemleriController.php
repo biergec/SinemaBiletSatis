@@ -2,7 +2,6 @@
 
 class FilmVizyonaAlmaIslemleriController extends controller
 {
-
 	public function yakindekilerIndexAction()
 	{
         $data['title'] = 'Yakındaki Filmler Listesi';
@@ -128,7 +127,7 @@ class FilmVizyonaAlmaIslemleriController extends controller
                     $data['result'] = $e;
                 }
             }
-            
+
             $data["yakindaCikacakFilmler"] = yakindakiFilmler::getAll();
             return $this->render('Yakindakiler/vizyondakiFilmlerEkleme', $data);
         }
