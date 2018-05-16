@@ -13,7 +13,7 @@
            }
            ?>
             
-            <form action="./?url=Film/FilmEklePost" method="Post">
+            <form action="./?url=FilmVizyonaAlmaIslemleri/VizyondakilerFilmEklePost" method="Post">
             <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
@@ -28,7 +28,7 @@
             <?php foreach($yakindaCikacakFilmler as $yakindaCikacakFilmler) { ?>
                 <input type="checkbox" name="filmID[]" value=<?php echo $yakindaCikacakFilmler->film_id; ?>>&nbsp; <?php 
                 
-                $req = $db->query("SELECT filmAd FROM filmler where film_id='".$film_id."' ");
+                $req = $db->query("SELECT filmAd FROM filmler where film_id='".$yakindaCikacakFilmler->film_id."' ");
                 $name = $req->fetch(PDO::FETCH_ASSOC);
                 echo $name['filmAd'];
                 
