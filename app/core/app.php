@@ -20,7 +20,7 @@ class app
 		 * yoksa geçerli olarak default/index
 		 */
 		$url = isset($_GET['url']) && !empty($_GET['url']) ? 
-			trim($_GET['url'], '/') : 'default/index';
+			trim($_GET['url'], '/') : 'WebSiteHomePage/index';
 
 		/**
 		 * URL dizgesini / karakterleriyle bölüyoruz
@@ -34,7 +34,7 @@ class app
 		 * indexController olacaktır, eğer yoksa defaultController olarak ayarla dedik
 		 * Aynı işlemi action için de yapıyoruz. Action $url[1]'de yer alıyor
 		 */
-		$this->controller = isset($url[0]) ? $url[0].'Controller' : 'defaultController';
+		$this->controller = isset($url[0]) ? $url[0].'Controller' : 'WebSiteHomePageController';
 		$this->action = isset($url[1]) ? $url[1].'Action' : 'indexAction';
 
 		/**

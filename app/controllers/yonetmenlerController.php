@@ -14,7 +14,7 @@ class YonetmenlerController extends controller
 		$data['yonetmenler'] = yonetmenler::getAll();
 
 		// app/views/index.php görünümünü gösterelim
-		$this->render('Yonetmenler/YonetmenlerIndex', $data);
+		$this->render('Admin/Yonetmenler/YonetmenlerIndex', $data);
 	}
 
 	public function YonetmenEklemeAction()
@@ -23,7 +23,7 @@ class YonetmenlerController extends controller
         $data['uyari'] = null;
         $data['result'] = null;
 
-		return $this->render('Yonetmenler/YonetmenEkle', $data);
+		return $this->render('Admin/Yonetmenler/YonetmenEkle', $data);
     }
     
     public function YonetmenEklemePostAction()
@@ -40,7 +40,7 @@ class YonetmenlerController extends controller
 
         if(strlen($kayitYonetmenAd)<=0 && !$kayitYonetmenAd && strlen($kayitYonetmenSoyad)<=0 && !$kayitYonetmenSoyad){
             $data['uyari'] = 'Yonetmen Adı ve Soyadı Boş Olamaz';
-		    return $this->render('Yonetmenler/YonetmenEkle', $data);
+		    return $this->render('Admin/Yonetmenler/YonetmenEkle', $data);
         }
         
         $YonetmenTamAd ="$kayitYonetmenAd $kayitYonetmenSoyad";
@@ -49,7 +49,7 @@ class YonetmenlerController extends controller
             $data['result'] = $result;
         }
         
-		return $this->render('Yonetmenler/YonetmenEkle', $data);
+		return $this->render('Admin/Yonetmenler/YonetmenEkle', $data);
 	}
     
 	private function YonetmenDatabaseKayit($kayitYonetmenAd)
@@ -82,12 +82,12 @@ class YonetmenlerController extends controller
         {
             $data["yonetmenler"] = yonetmenler::getAll();
             $data['uyari'] = "Yonetmen Kullanıldığı için silinemez"; 
-		    return $this->render('Yonetmenler/YonetmenlerIndex', $data);
+		    return $this->render('Admin/Yonetmenler/YonetmenlerIndex', $data);
         }
         $data["yonetmenler"] = yonetmenler::getAll();
         
         $data['result'] = "Yönetmen Silindi"; 
-		return $this->render('Yonetmenler/YonetmenlerIndex', $data);
+		return $this->render('Admin/Yonetmenler/YonetmenlerIndex', $data);
     }
 
 }

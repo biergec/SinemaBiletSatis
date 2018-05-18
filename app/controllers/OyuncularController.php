@@ -14,7 +14,7 @@ class OyuncularController extends controller
         $data['uyari'] = null;
 
 		// app/views/index.php görünümünü gösterelim
-		$this->render('Oyuncular/OyuncularIndex', $data);
+		$this->render('Admin/Oyuncular/OyuncularIndex', $data);
 	}
 
 	public function OyuncuEklemeAction()
@@ -23,7 +23,7 @@ class OyuncularController extends controller
         $data['uyari'] = null;
         $data['result'] = null;
 
-		return $this->render('Oyuncular/OyuncuEkle', $data);
+		return $this->render('Admin/Oyuncular/OyuncuEkle', $data);
     }
     
     public function OyuncuSilPostAction()
@@ -42,13 +42,13 @@ class OyuncularController extends controller
 		    $data['posts'] = oyuncular::getAll();
             
             $data['uyari'] = "Oyuncu Kullanıldığı için silinemez"; 
-		    return $this->render('Oyuncular/OyuncularIndex', $data);
+		    return $this->render('Admin/Oyuncular/OyuncularIndex', $data);
         }finally{
         }
 		$data['posts'] = oyuncular::getAll();
         
         $data['result'] = "Oyuncu Silindi"; 
-		return $this->render('Oyuncular/OyuncularIndex', $data);
+		return $this->render('Admin/Oyuncular/OyuncularIndex', $data);
     }
 
     public function OyuncuEklemePostAction()
@@ -65,7 +65,7 @@ class OyuncularController extends controller
 
         if(strlen($kayitOyuncuAd)<=0 && !$kayitOyuncuAd && strlen($kayitOyuncuSoyad)<=0 && !$kayitOyuncuSoyad){
             $data['uyari'] = 'Oyuncu Adı ve Soyadı Boş Olamaz';
-		    return $this->render('Oyuncular/OyuncuEkle', $data);
+		    return $this->render('Admin/Oyuncular/OyuncuEkle', $data);
         }
         
         $OyuncuTamAd ="$kayitOyuncuAd $kayitOyuncuSoyad";
@@ -74,7 +74,7 @@ class OyuncularController extends controller
             $data['result'] = $result;
         }
         
-		return $this->render('Oyuncular/OyuncuEkle', $data);
+		return $this->render('Admin/Oyuncular/OyuncuEkle', $data);
 	}
     
 	private function OyuncuDatabaseKayit($kayitOyuncuAd)

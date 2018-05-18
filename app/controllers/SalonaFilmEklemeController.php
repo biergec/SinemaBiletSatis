@@ -11,7 +11,7 @@ class SalonaFilmEklemeController extends controller
         $data['film'] = film::getAll();
         $data['slondakigosterilenfilmler'] = slondakigosterilenfilmler::getAll();
 
-		$this->render('SalonlaraEklenenFilmler/salonFilmListele', $data);
+		$this->render('Admin/SalonlaraEklenenFilmler/salonFilmListele', $data);
 	}
     
 	public function SalonaFilmEkleAction()
@@ -23,7 +23,7 @@ class SalonaFilmEklemeController extends controller
         $data['film'] = film::getAll();
         $data['slondakigosterilenfilmler'] = slondakigosterilenfilmler::getAll();
 
-		$this->render('SalonlaraEklenenFilmler/salonFilmEkle', $data);
+		$this->render('Admin/SalonlaraEklenenFilmler/salonFilmEkle', $data);
 	}
 
     public function SalonaFilmEklePostAction()
@@ -43,7 +43,7 @@ class SalonaFilmEklemeController extends controller
 
         if(!$filmSalonlari || !$baslangiczamani || !$film || !$bitiszamani){
             $data['uyari'] = 'Boş alan bırakmayın!..';
-		    return $this->render('SalonlaraEklenenFilmler/salonFilmEkle', $data);
+		    return $this->render('Admin/SalonlaraEklenenFilmler/salonFilmEkle', $data);
         }
         
  		if($filmSalonlari && $baslangiczamani&& $film&&$bitiszamani){
@@ -52,7 +52,7 @@ class SalonaFilmEklemeController extends controller
         }
         
         $data['slondakigosterilenfilmler'] = slondakigosterilenfilmler::getAll();
-		return $this->render('SalonlaraEklenenFilmler/salonFilmEkle', $data);
+		return $this->render('Admin/SalonlaraEklenenFilmler/salonFilmEkle', $data);
 	}
     
 	private function filmSalonKayit($filmSalonlari,$baslangiczamani,$film,$bitiszamani)
@@ -86,7 +86,7 @@ class SalonaFilmEklemeController extends controller
         }catch(Exception $e)
         {
             $data['uyari'] = "Film Salondan Silinemedi"; 
-		    return $this->render('SalonlaraEklenenFilmler/salonFilmListele', $data);
+		    return $this->render('Admin/SalonlaraEklenenFilmler/salonFilmListele', $data);
         }
         finally{
             $data['filmSalonlari'] = filmSalonlari::getAll();
@@ -97,7 +97,7 @@ class SalonaFilmEklemeController extends controller
         $data['slondakigosterilenfilmler'] = slondakigosterilenfilmler::getAll();
         
         $data['result'] = "Film Salondan Silindi"; 
-		return $this->render('SalonlaraEklenenFilmler/salonFilmListele', $data);
+		return $this->render('Admin/SalonlaraEklenenFilmler/salonFilmListele', $data);
     }
 
 }

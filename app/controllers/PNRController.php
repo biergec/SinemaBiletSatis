@@ -2,19 +2,14 @@
 
 class PNRController extends controller
 {
-	/**
-	 * ?url=PNR/index için aksiyon yazalım
-	 */
 	public function PNRIndexAction()
 	{
-		// Görünüm dosyasına gönderilecek değişkenler
         $data['title'] = 'PNR Listesi';
         $data['uyari'] = null;
         $data['result'] = null;
 		$data['PNR'] = PNR::getAll();
 
-		// app/views/index.php görünümünü gösterelim
-		$this->render('PNR/PNRIndex', $data);
+		$this->render('Admin/PNR/PNRIndex', $data);
 	}
 
 	public function PNREkleAction()
@@ -23,7 +18,7 @@ class PNRController extends controller
         $data['uyari'] = null;
         $data['result'] = null;
 
-		return $this->render('PNR/PNREkle', $data);
+		return $this->render('Admin/PNR/PNREkle', $data);
     }
     
     public function PNREklemePostAction()
@@ -39,7 +34,7 @@ class PNRController extends controller
 
         if(strlen($indirimMiktari)<=0 || !$indirimMiktari || strlen($pnrKod)<=0 || !$pnrKod|| strlen($stok)<=0 || !$stok){
             $data['uyari'] = 'Boş alan bırakmayın!..';
-		    return $this->render('PNR/PNREkle', $data);
+		    return $this->render('Admin/PNR/PNREkle', $data);
         }
         
  		if($indirimMiktari && $pnrKod&& $stok){
@@ -47,7 +42,7 @@ class PNRController extends controller
             $data['result'] = $result;
         }
         
-		return $this->render('PNR/PNREkle', $data);
+		return $this->render('Admin/PNR/PNREkle', $data);
 	}
     
 	private function PNRDatabaseKayit($indirimMiktari,$pnrKod,$stok)
@@ -79,16 +74,14 @@ class PNRController extends controller
         }catch(Exception $e)
         {
             $data['uyari'] = "PNR Silinemedi"; 
-		    return $this->render('PNR/PNRIndex', $data);
+		    return $this->render('Admin/PNR/PNRIndex', $data);
         }
         finally{
             $data["PNR"] = PNR::getAll();
         } 
 
-        
-        
         $data['result'] = "PNR Silindi"; 
-		return $this->render('PNR/PNRIndex', $data);
+		return $this->render('Admin/PNR/PNRIndex', $data);
     }
 
 }

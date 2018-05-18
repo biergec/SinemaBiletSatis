@@ -13,7 +13,7 @@ class FilmController extends controller
         $data["oyuncular"] = oyuncular::getAll();
         $data['film'] = film::getAll();
         
-        $this->render('Filmler/FilmEkle', $data);
+        $this->render('Admin/Filmler/FilmEkle', $data);
 	}
 
     public function FilmEklePostAction()
@@ -41,7 +41,7 @@ class FilmController extends controller
         !$filmOzet ||!$vizyonTarihi ||!$filmFiyati)
         {
             $data['uyari'] = 'Lütfen Tüm Bilgileri Doldurunuz';
-            return $this->render('Filmler/FilmEkle', $data);
+            return $this->render('Admin/Filmler/FilmEkle', $data);
             
         }else{
             
@@ -64,7 +64,7 @@ class FilmController extends controller
                     $data['result'] = $e;
                 }
             }
-            return $this->render('Filmler/FilmEkle', $data);
+            return $this->render('Admin/Filmler/FilmEkle', $data);
         }
 	}
     
@@ -96,13 +96,13 @@ class FilmController extends controller
         }catch(Exception $e)
         {
             $data['uyari'] = "Film Silinemedi"; 
-		    return $this->render('Filmler/FilmListesi', $data);
+		    return $this->render('Admin/Filmler/FilmListesi', $data);
         }finally{
             $data["film"] = film::getAll();
         }
 
         $data['result'] =  "Film Silindi"; 
-		return $this->render('Filmler/FilmListesi', $data);
+		return $this->render('Admin/Filmler/FilmListesi', $data);
     }
     public function FilmListesiAction()
 	{
@@ -116,6 +116,6 @@ class FilmController extends controller
         $data["filmTurleri"] = filmTurleri::getAll();
         $data["oyuncular"] = oyuncular::getAll();
 
-		$this->render('Filmler/FilmListesi', $data);
+		$this->render('Admin/Filmler/FilmListesi', $data);
     }
 }

@@ -14,7 +14,7 @@ class KategorilerController extends controller
 		$data['KategoriTuru'] = kategoriler::getAll();
 
 		// app/views/index.php görünümünü gösterelim
-		$this->render('Kategoriler/KategorilerIndex', $data);
+		$this->render('Admin/Kategoriler/KategorilerIndex', $data);
 	}
 
 	public function KategoriEklemeAction()
@@ -23,7 +23,7 @@ class KategorilerController extends controller
         $data['uyari'] = null;
         $data['result'] = null;
 
-		return $this->render('Kategoriler/KategoriEkle', $data);
+		return $this->render('Admin/Kategoriler/KategoriEkle', $data);
     }
     
     public function KategoriEklemePostAction()
@@ -38,7 +38,7 @@ class KategorilerController extends controller
 
         if(strlen($kayitKategoriAd)<=0 && !$kayitKategoriAd){
             $data['uyari'] = 'Kategori Adı Boş Olamaz';
-		    return $this->render('Kategoriler/KategoriEkle', $data);
+		    return $this->render('Admin/Kategoriler/KategoriEkle', $data);
         }
         
         
@@ -47,7 +47,7 @@ class KategorilerController extends controller
             $data['result'] = $result;
         }
         
-		return $this->render('Kategoriler/KategoriEkle', $data);
+		return $this->render('Admin/Kategoriler/KategoriEkle', $data);
 	}
     
 	private function KategoriDatabaseKayit($kayitKategoriAd)
@@ -81,13 +81,13 @@ class KategorilerController extends controller
         {
             $data["KategoriTuru"] = kategoriler::getAll();
             $data['uyari'] = "Kategori Kullanıldığı için silinemedi"; 
-		    return $this->render('Kategoriler/KategorilerIndex', $data);
+		    return $this->render('Admin/Kategoriler/KategorilerIndex', $data);
         }
         $data["KategoriTuru"] = kategoriler::getAll();
         
         
         $data['result'] = "Kategori Silindi"; 
-		return $this->render('Kategoriler/KategorilerIndex', $data);
+		return $this->render('Admin/Kategoriler/KategorilerIndex', $data);
     }
 
     

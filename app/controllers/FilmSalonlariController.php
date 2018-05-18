@@ -9,7 +9,7 @@ class FilmSalonlariController extends controller
 		$data['title'] = 'Sinema Film Salonları';
         $data["filmSalonlari"] = filmSalonlari::getAll();
 
-        $this->render('FilmSalonlari/salonListesi', $data);
+        $this->render('Admin/FilmSalonlari/salonListesi', $data);
 	}
 
 	public function FilmSalonEkleAction()
@@ -18,7 +18,7 @@ class FilmSalonlariController extends controller
         $data['uyari'] = null;
         $data['result'] = null;
 
-		return $this->render('FilmSalonlari/salonEkleme', $data);
+		return $this->render('Admin/FilmSalonlari/salonEkleme', $data);
     }
 
     public function FilmSalonEklePostAction()
@@ -32,7 +32,7 @@ class FilmSalonlariController extends controller
 
         if(strlen($sinemaSalonAd)<=0 || !$sinemaSalonAd ){
             $data['uyari'] = 'Lütfen Tüm Bilgileri Doldurunuz';
-		    return $this->render('FilmSalonlari/salonEkleme', $data);
+		    return $this->render('Admin/FilmSalonlari/salonEkleme', $data);
         }
         
  		if($sinemaSalonAd && $sinemaSalonKoltukSayisi){
@@ -40,7 +40,7 @@ class FilmSalonlariController extends controller
             $data['result'] = $result;
         }
         trimEnd();
-		return $this->render('FilmSalonlari/salonEkleme', $data);
+		return $this->render('Admin/FilmSalonlari/salonEkleme', $data);
 	}
 	private function SinemaSalonDatabaseKayit($salonAdi, $koltukSayisi)
 	{
@@ -72,13 +72,13 @@ class FilmSalonlariController extends controller
             $data["filmSalonlari"] = filmSalonlari::getAll();
             
             $data['uyari'] = "Sinema Kullanıldığı için Silinemez"; 
-		    return $this->render('FilmSalonlari/salonListesi', $data);
+		    return $this->render('Admin/FilmSalonlari/salonListesi', $data);
         }
         $data["filmSalonlari"] = filmSalonlari::getAll();
         
 
         $data['result'] = "Sinema Salon Silindi"; 
-		return $this->render('FilmSalonlari/salonListesi', $data);
+		return $this->render('Admin/FilmSalonlari/salonListesi', $data);
     }
 
 }
