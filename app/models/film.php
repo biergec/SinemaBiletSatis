@@ -34,6 +34,7 @@ class film
 
 		return $list;
 	  }
+	  
 	  public static function get($film_id) {
 
 		$db = Db::getInstance();

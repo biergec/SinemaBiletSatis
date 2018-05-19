@@ -1,31 +1,21 @@
 <?php require VDIR.'/header.php' ?>
 
-<!-- banner -->
-	<div id="slidey" style="display:none;">
-		<ul>
-			<li><img src="images/5.jpg" alt=" "><p class='title'>Tarzan</p><p class='description'>Örnek tanıtım metni</p></li>
-			<li><img src="images/2.jpg" alt=" "><p class='title'>Maximum Ride</p><p class='description'>Örnek tanıtım metni</p></li>
-			<li><img src="images/3.jpg" alt=" "><p class='title'>Independence</p><p class='description'>Örnek tanıtım metni</p></li>
-			<li><img src="images/2.jpg" alt=" "><p class='title'>Maximum Ride</p><p class='description'>Örnek tanıtım metni</p></li>
-			<li><img src="images/5.jpg" alt=" "><p class='title'>Tarzan</p><p class='description'>Örnek tanıtım metni</p></li>
-		</ul>   	
-    </div>
-    <script src="js/jquery.slidey.js"></script>
-    <script src="js/jquery.dotdotdot.min.js"></script>
-	   <script type="text/javascript">
-			$("#slidey").slidey({
-				interval: 8000,
-				listCount: 5,
-				autoplay: false,
-				showList: true
-			});
-			$(".slidey-list-description").dotdotdot();
-		</script>
-<!-- //banner -->
-<!-- banner-bottom -->
+  
+  <?php 
+  if(isset($uyari)){
+    echo $uyari;
+  }
 
-	<?php
+?>
+</form> 
+<hr>
+<?php 
+ if(isset($result)){
+  echo $result;
+}
+?>
 
+<?php
 		
 $db = Db::getInstance();
 

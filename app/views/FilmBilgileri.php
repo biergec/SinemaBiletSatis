@@ -1,25 +1,13 @@
 <?php require VDIR.'/header.php' ?>
 
-<!-- banner -->
-    <script src="js/jquery.slidey.js"></script>
-    <script src="js/jquery.dotdotdot.min.js"></script>
-	   <script type="text/javascript">
-			$("#slidey").slidey({
-				interval: 8000,
-				listCount: 5,
-				autoplay: false,
-				showList: true
-			});
-			$(".slidey-list-description").dotdotdot();
-		</script>
-<!-- //banner -->
+<div class="container">
+<div class="row">
+    
 <!-- banner-bottom -->
-    <?php
+<?php
     $db = Db::getInstance();
     $req = $db->query("SELECT * FROM filmler where film_id='".$filmb['film_id']."'");
     $name = $req->fetch(PDO::FETCH_ASSOC);
-   /* $req2 = $db->query("SELECT * FROM sinema_film_salon where film_id='".$filmb['film_id']."'");
-    $name2 = $req2->fetch(PDO::FETCH_ASSOC);*/
     ?>
 		<br>
 		<h4 class="latest-text w3_latest_text">Film Bilgileri</h4>
@@ -41,37 +29,47 @@
                     </div>
                     <div class="col-md-9">
               <br>
-                <div class="alert alert-info">
-                   <p> Film Adı &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;:  <?php  echo $name['filmAd'] ?></p>
-                   <p> Film Özeti &nbsp; &nbsp; &nbsp; &nbsp;:  <?php echo $name['filmOzet'] ?></p>
-                   <p> Vizyon Tarihi  &nbsp; &nbsp;:  <?php echo $name['vizyonTarihi'] ?></p>
-                   <p> Film Fiyatı &nbsp; &nbsp; &nbsp; &nbsp;:  <?php echo $name['filmFiyat'] ?></p>
+                <div class="alert alert-info" >
+                   <p style="font-size:18px;"> Film Adı &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;:  <?php  echo $name['filmAd'] ?></p>
+                   <p style="font-size:18px;"> Vizyon Tarihi  &nbsp; &nbsp;:  <?php echo $name['vizyonTarihi'] ?></p>
+                   <p style="font-size:18px;"> Film Fiyatı &nbsp; &nbsp; &nbsp; &nbsp;:  <?php echo $name['filmFiyat'] ?> TL</p>
+                   <p style="font-size:18px;"> Film Özeti &nbsp; &nbsp; &nbsp; &nbsp;:  <?php echo $name['filmOzet'] ?></p>
                 </div>
-
 <br>
 
-                <form action="./?url=WebSiteHomePage/FilmBilgileri" method="Post">  
+<div class="row">
+<form action="./?url=WebSiteHomePage/FilmSeansBiletAl" method="Post">  
 
             <label for="labelsalon">Film Seansları</label><br>
-
-
             <select class="custom-select" id="filmSeans" name="filmSeans">
             <option name="filmTurleriID" selected>Seans Seciniz</option>
             <?php foreach($slon as $slon) { 
                 $req3 = $db->query("SELECT * FROM sinema_film_salonlari where salon_id='".$slon->salon_id."'");
                 $name3 = $req3->fetch(PDO::FETCH_ASSOC);?>
-                <option value=<?php echo $slon->salon_id; ?> > <?php echo $name3['salonAdi']; echo " Seans: ";echo$slon->baslama_zamani; ?> </option>
+
+                <option value=<?php echo $slon->sinema_film_salon_id; ?> > <?php echo "Salon : "; echo $name3['salonAdi']; echo "-  Seans Saati: ";  echo$slon->baslama_zamani; ?> </option>
+                
                 <?php } ?>
               </select>
-
-			    <button  class="btn btn-info" type="Submit" >Satın Al</button>
+                <?php if(isset($_SESSION["mail"]) && isset($_SESSION["kullanici"]))	{ ?>
+                    <br>
+                    <br>
+                    <button  class="btn btn-warning btn-lg active" type="Submit">Seansa Bilet Satın Al</button>
+                <?php }else{?>
+                    <b>
+                    <p style="color:red">Bilet Satın Alabilmek İçin Üye Girişi Yapmalısınız</p>
+                    </b>
+                <?php } ?>
+			    
                 </form>	
 
                 </div>
             </div>	
+</div>
+            
+</div>
+</div>
 
-
-<br>
 <br>
 <br>
 <?php require VDIR.'/footer.php' ?>

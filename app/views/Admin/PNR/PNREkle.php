@@ -15,7 +15,7 @@
   <button type="Submit" value="Kaydet" class="btn btn-primary">PNR Ekle</button>
   
   <?php 
-  if($uyari){
+  if(isset($uyari)){
     echo $uyari;
   }
 
@@ -23,7 +23,7 @@
 </form> 
 <hr>
 <?php 
- if($result){
+ if(isset($result)){
   echo $result;
 }
 ?>
