@@ -166,7 +166,12 @@
                                 <li><a href="?url=SalonaFilmEkleme/SalonaFilmEkle">Salonlara Film Ekle</a></li>
                             </ul>
                         </li>
-
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="ti-video-clapper"></i><span class="hide-menu">Kullanıcı İşlemleri
+                        </span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="?url=adminAnaSayfasi/kullaniciAdminYetkisiVeListeleme">Kullanıcı Listesi</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
