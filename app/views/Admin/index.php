@@ -1,7 +1,6 @@
 <?php require VDIR.'/Admin/header.php' ?>
-<h1><?php echo @$title ?></h1>
-
-<p><a href="<?php echo controller::url('default', 'test')?>">Test sayfası için tıklayın</a></p>
-<p><a href="<?php echo controller::url('default', 'aaaa')?>">aaaa sayfası için tıklayın</a></p>
+<h1>Hoşgeldiniz</h1>
+<br>
+<p>Sağ tarafta bulunan menüler yardımı ile ilgili işlemlere ulaşabilirsiniz.</p>
 
 <?php require VDIR.'/Admin/footer.php' ?>

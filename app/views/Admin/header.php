@@ -80,7 +80,7 @@
                             <a href="./?url=adminAnaSayfasi/index"><i class="ti-dashboard"></i><span class="hide-menu">Genel Balkış</span></a>
                         </li>
                         <li>
-                            <a href="./"><i class="ti-dashboard"></i><span class="hide-menu">Siteye Dön</span></a>
+                            <a href="./"><i class="ti-arrow-left"></i><span class="hide-menu">Siteye Dön</span></a>
                         </li>
                         <li class="nav-label">Bilgi İşlem</li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="ti-user"></i><span class="hide-menu">Oyuncular
@@ -91,7 +91,7 @@
                             </ul>
                         </li>
 
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="ti-camera"></i><span class="hide-menu">Yönetmenler
+                        <li> <a class="has-arrow" href="#" aria-expanded="false"><i class="ti-user"></i><span class="hide-menu">Yönetmenler
                         </span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="?url=Yonetmenler/YonetmenlerIndex">Yönetmen Listesi</a></li>
@@ -99,7 +99,7 @@
                             </ul>
                         </li>
 
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="ti-video-clapper"></i><span class="hide-menu">Kategoriler
+                        <li> <a class="has-arrow" href="#" aria-expanded="false"><i class="ti-comment-alt"></i><span class="hide-menu">Kategoriler
                         </span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="?url=Kategoriler/KategorilerIndex">Kayegori Listesi</a></li>
@@ -108,7 +108,7 @@
                         </li>
 
                               
-                        <li><a class="has-arrow  " href="#" aria-expanded="false"><i class="ti-video-clapper"></i><span class="hide-menu">Film Türleri İşlemleri
+                        <li><a class="has-arrow" href="#" aria-expanded="false"><i class="ti-pin-alt"></i><span class="hide-menu">Film Türleri İşlemleri
 
                         </span></a>
                             <ul aria-expanded="false" class="collapse">
@@ -118,7 +118,7 @@
                         </li>
                             
 
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="ti-video-clapper"></i><span class="hide-menu">PNR İşlemleri
+                        <li> <a class="has-arrow" href="#" aria-expanded="false"><i class="ti-ticket"></i><span class="hide-menu">PNR İşlemleri
                         </span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="?url=PNR/PNRIndex">PNR Listesi</a></li>
@@ -126,7 +126,7 @@
                             </ul>
                         </li>
 
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="ti-video-clapper"></i><span class="hide-menu">Sinema Salon İşlemleri
+                        <li> <a class="has-arrow" href="#" aria-expanded="false"><i class="ti-calendar"></i><span class="hide-menu">Sinema Salon İşlemleri
                         </span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="?url=FilmSalonlari/FilmSalonlari">Salon Listesi</a></li>
@@ -134,7 +134,7 @@
                             </ul>
                         </li>
 
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="ti-video-clapper"></i><span class="hide-menu">Film İşlemleri
+                        <li> <a class="has-arrow " href="#" aria-expanded="false"><i class="ti-video-clapper"></i><span class="hide-menu">Film İşlemleri
                         </span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="?url=Film/FilmListesi">Film Listesi</a></li>
@@ -142,7 +142,7 @@
                             </ul>
                         </li>
 
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="ti-video-clapper"></i><span class="hide-menu">Yakındaki Filmler
+                        <li> <a class="has-arrow " href="#" aria-expanded="false"><i class="ti-timer"></i><span class="hide-menu">Yakındaki Filmler
                         </span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="?url=FilmVizyonaAlmaIslemleri/yakindekilerIndex">Yakındaki Film Listesi</a></li>
@@ -151,7 +151,7 @@
                         </li>
 
 
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="ti-video-clapper"></i><span class="hide-menu">Film Vizyon İşlemleri
+                        <li> <a class="has-arrow " href="#" aria-expanded="false"><i class="ti-blackboard"></i><span class="hide-menu">Film Vizyon İşlemleri
                         </span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="?url=FilmVizyonaAlmaIslemleri/VizyondakilerFilmListesi">Vizyondakiler Film Listesi</a></li>
@@ -166,7 +166,7 @@
                                 <li><a href="?url=SalonaFilmEkleme/SalonaFilmEkle">Salonlara Film Ekle</a></li>
                             </ul>
                         </li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="ti-video-clapper"></i><span class="hide-menu">Kullanıcı İşlemleri
+                        <li> <a class="has-arrow" href="#" aria-expanded="false"><i class=" ti-panel"></i><span class="hide-menu">Kullanıcı İşlemleri
                         </span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="?url=adminAnaSayfasi/kullaniciAdminYetkisiVeListeleme">Kullanıcı Listesi</a></li>

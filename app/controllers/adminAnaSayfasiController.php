@@ -69,5 +69,4 @@ Class adminAnaSayfasiController extends controller
         }
 	}
 	
-
 }
