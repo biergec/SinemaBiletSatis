@@ -6,10 +6,25 @@ class WebSiteHomePageController extends controller
 	{
 		$data['uyari']=null;
 		$data['girisHatasi'] = null;
+		$data['vizyondakiFilmler'] = vizyondakiFilmler::getAll();
+		$data['yakindakifilmler'] = yakindakifilmler::getAll();
+		
+		$this->render('index',$data);
+	}
+	public function FilmBilgileriAction()
+	{
+		$film_id = $_POST['film'];
+
+		if($film_id)
+		{
+			$data['filmb']=film::get($film_id);
+			$data['slon']=slondakigosterilenfilmler::get($film_id);
+			$this->render('FilmBilgileri',$data);
+		}
+	}
 
 		$this->render('index',$data);
 	}
-
 	public function uyeOlAction()
 	{
 		$data['uyari']=null;
