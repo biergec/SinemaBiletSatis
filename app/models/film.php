@@ -34,4 +34,14 @@ class film
 
 		return $list;
 	  }
+	  public static function get($film_id) {
+
+		$db = Db::getInstance();
+		$sorgu="SELECT * FROM filmler WHERE film_id = '".$film_id."'";
+		$req = $db->query($sorgu);
+		$name = $req->fetch(PDO::FETCH_ASSOC);
+		
+		return $name;
+	}
+
 }

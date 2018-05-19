@@ -1,182 +1,154 @@
 <!DOCTYPE html>
-<html lang="tr">
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Favicon icon -->
-	<title><?php echo isset($title) ? $title : 'Sinema Bilet Satış Admin Sayfası' ?></title>
-	<!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="css/helper.css" rel="stylesheet">
-    <link href="css/spinners.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+<title>Sinema Bilet Satış</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style_index.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="css/contactstyle.css" type="text/css" media="all" />
+<link rel="stylesheet" href="css/faqstyle.css" type="text/css" media="all" />
+<link href="css/single.css" rel='stylesheet' type='text/css' />
+<link href="css/medile.css" rel='stylesheet' type='text/css' />
+<!-- banner-slider -->
+<link href="css/jquery.slidey.min.css" rel="stylesheet">
+<!-- //banner-slider -->
+<!-- pop-up -->
+<link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+<!-- //pop-up -->
+<!-- font-awesome icons -->
+<link rel="stylesheet" href="css/font-awesome.min.css" />
+<!-- //font-awesome icons -->
+<!-- js -->
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:** -->
-    <!--[if lt IE 9]>
-    <script src="https:**oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https:**oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
+<script type="text/javascript" src="js/jquery/jquery.min.js"></script>
+<!-- //js -->
+<!-- banner-bottom-plugin -->
+<link href="css/owl.carousel.css" rel="stylesheet" type="text/css" media="all">
+<script src="js/owl.carousel.js"></script>
+<script>
+	$(document).ready(function() { 
+		$("#owl-demo").owlCarousel({
+	 
+		  autoPlay: 3000, //Set AutoPlay to 3 seconds
+	 
+		  items : 5,
+		  itemsDesktop : [640,4],
+		  itemsDesktopSmall : [414,3]
+	 
+		});
+	 
+	}); 
+</script> 
+
+<!-- //banner-bottom-plugin -->
+<link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
 </head>
-<body class="fix-header fix-sidebar">
-	 <!-- Preloader - style you can find in spinners.css -->
-	 <div class="preloader">
-        <svg class="circular" viewBox="25 25 50 50">
-            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
-    </div>
-    <!-- Main wrapper  -->
-    <div id="main-wrapper">
-        <!-- header header  -->
-        <div class="header">
-            <nav class="navbar top-navbar navbar-expand-md navbar-light">
-                <!-- Logo -->
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="./">
-                        <!-- Logo icon -->
-                        <b><img src="images/logo.png" alt="homepage" class="dark-logo" /></b>
-                        <!--End Logo icon -->
-                    </a>
-                </div>
-                <!-- End Logo -->
-                <div class="navbar-collapse">
-                    <!-- toggle and nav items -->
-                    <ul class="navbar-nav mr-auto mt-md-0">
-                        <!-- This is  -->
-                        <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted  " href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
-                        <li class="nav-item m-l-10"> <a class="nav-link sidebartoggler hidden-sm-down text-muted  " href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
-                    </ul>
-                    <!-- User profile and search -->
-                    <ul class="navbar-nav my-lg-0">
-                        <!-- Üst sağ taraf-->
-                    </ul>
-                </div>
-            </nav>
-        </div>
-        <!-- End header header -->
-        <!-- Left Sidebar  -->
-        <div class="left-sidebar">
-            <!-- Sidebar scroll-->
-            <div class="scroll-sidebar">
-                <!-- Sidebar navigation-->
-                <nav class="sidebar-nav">
-                    <ul id="sidebarnav">
-                        <li class="nav-devider"></li>
-                        <li class="nav-label">Yönetim</li>
-                        <li>
-                            <a href="./"><i class="ti-dashboard"></i><span class="hide-menu">Genel Balkış</span></a>
-                        </li>
-
-                        <li class="nav-label">Bilgi İşlem</li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="ti-user"></i><span class="hide-menu">Oyuncular
-                        </span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="?url=Oyuncular/OyuncularIndex">Oyuncu Listesi</a></li>
-                                <li><a href="?url=Oyuncular/OyuncuEkleme">Oyuncu Ekleme</a></li>
-                            </ul>
-                        </li>
-
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="ti-camera"></i><span class="hide-menu">Yönetmenler
-                        </span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="?url=Yonetmenler/YonetmenlerIndex">Yönetmen Listesi</a></li>
-                                <li><a href="?url=Yonetmenler/YonetmenEkleme">Yönetmen Ekleme</a></li>
-                            </ul>
-                        </li>
-
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="ti-video-clapper"></i><span class="hide-menu">Kategoriler
-                        </span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="?url=Kategoriler/KategorilerIndex">Kayegori Listesi</a></li>
-                                <li><a href="?url=Kategoriler/KategoriEkleme">Kategori Ekleme</a></li>
-                            </ul>
-                        </li>
-
-                              
-                        <li><a class="has-arrow  " href="#" aria-expanded="false"><i class="ti-video-clapper"></i><span class="hide-menu">Film Türleri İşlemleri
-
-                        </span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="?url=FilmTurleri/FilmTurleri">Film Türleri Listesi</a></li>
-                                <li><a href="?url=FilmTurleri/FilmTuruEkle">Yeni Film Türü Ekle</a></li>
-                            </ul>
-                        </li>
-                            
-
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="ti-video-clapper"></i><span class="hide-menu">PNR İşlemleri
-                        </span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="?url=PNR/PNRIndex">PNR Listesi</a></li>
-                                <li><a href="?url=PNR/PNREkle">PNR Ekle</a></li>
-                            </ul>
-                        </li>
-
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="ti-video-clapper"></i><span class="hide-menu">Sinema Salon İşlemleri
-                        </span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="?url=FilmSalonlari/FilmSalonlari">Salon Listesi</a></li>
-                                <li><a href="?url=FilmSalonlari/FilmSalonEkle">Yeni Sinema Salonu Ekle</a></li>
-                            </ul>
-                        </li>
-
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="ti-video-clapper"></i><span class="hide-menu">Film İşlemleri
-                        </span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="?url=Film/FilmListesi">Film Listesi</a></li>
-                                <li><a href="?url=Film/FilmEkle">Film Ekle</a></li>
-                            </ul>
-                        </li>
-
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="ti-video-clapper"></i><span class="hide-menu">Yakındaki Filmler
-                        </span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="?url=FilmVizyonaAlmaIslemleri/yakindekilerIndex">Yakındaki Film Listesi</a></li>
-                                <li><a href="?url=FilmVizyonaAlmaIslemleri/yakindekiFilmlerEkleme">Yakındaki Filmlere Ekle</a></li>
-                            </ul>
-                        </li>
-
-
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="ti-video-clapper"></i><span class="hide-menu">Film Vizyon İşlemleri
-                        </span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="?url=FilmVizyonaAlmaIslemleri/VizyondakilerFilmListesi">Vizyondakiler Film Listesi</a></li>
-                                <li><a href="?url=FilmVizyonaAlmaIslemleri/VizyondakilerFilmEkle">Vizyondakiler Film Ekle</a></li>
-                            </ul>
-                        </li>
-
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="ti-video-clapper"></i><span class="hide-menu">Salon Film İşlemleri
-                        </span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="?url=SalonaFilmEkleme/SalonFilm">Salondaki Filmleri Listesi</a></li>
-                                <li><a href="?url=SalonaFilmEkleme/SalonaFilmEkle">Salonlara Film Ekle</a></li>
-                            </ul>
-                        </li>
-
-                    </ul>
-                </nav>
-                <!-- End Sidebar navigation -->
-            </div>
-            <!-- End Sidebar scroll-->
-        </div>
-        <!-- End Left Sidebar  -->
-        <!-- Page wrapper  -->
-        <div class="page-wrapper">
-            <!-- Bread crumb -->
-            <div class="row page-titles">
-                <div class="col-md-5 align-self-center">
-                    <h3 class="text-primary"><?php echo @$title ?></h3> </div>
-                <div class="col-md-7 align-self-center">
-                    
-                </div>
-            </div>
-            <!-- End Bread crumb -->
-            <!-- Container fluid  -->
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-							
 	
+<body>
+<!-- Session Kontrolü -->
+<?php 
+	if(!isset($_SESSION)){
+		session_start();
+	}
+	if(isset($cikisYap)){
+		if($cikisYap == 1){
+			session_destroy();
+			header("Location: ./");
+		}
+	}
+?>
+
+<!-- header -->
+	<div class="header">
+		<div class="container">
+			<div class="w3layouts_logo">
+				<a href="/"><h1>Sinema<span>Rezervasyon</span></h1></a>
+			</div>
+			<div class="w3_search">
+				<!--  Arama çubuğu yeri -->
+			</div>
+			<div class="w3l_sign_in_register">
+				<ul>
+					<?php if(isset($_SESSION["mail"]) && isset($_SESSION["kullanici"]))	{ ?>
+						<li><a href="#" data-toggle="modal" data-target="#myModal">Profil</a></li>
+					<?php	}else{ ?>
+					<li><a href="#" data-toggle="modal" data-target="#myModal">Giriş Yap / Kayıt Ol</a></li>
+					<?php }	?>
+				</ul>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+<!-- bootstrap-pop-up -->
+	<div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<?php 
+					if(isset($_SESSION["mail"]) && isset($_SESSION["kullanici"]))
+					{
+						include 'headerGirisYapanKullanici.php';
+					}else{
+						include 'headerLoginEkrani.php';
+					}
+					?>
+				</div>
+		</div>
+	</div>
+
+<script>
+		$('.toggle').click(function(){
+		  // Switches the Icon
+		  $(this).children('i').toggleClass('fa-pencil');
+		  // Switches the forms  
+		  $('.form').animate({
+			height: "toggle",
+			'padding-top': 'toggle',
+			'padding-bottom': 'toggle',
+			opacity: "toggle"
+		  }, "slow");
+		});
+	</script>
+<!-- //bootstrap-pop-up -->
+<!-- nav -->
+	<div class="movies_nav">
+		<div class="container">
+			<nav class="navbar navbar-default">
+				<div class="navbar-header navbar-left">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+					<nav>
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="./">Ana Sayfa</a></li>
+							<li><a href="SSS.html">SSS</a></li>
+						</ul>
+					</nav>
+				</div>
+			</nav>	
+		</div>
+	</div>
+<!-- //nav -->

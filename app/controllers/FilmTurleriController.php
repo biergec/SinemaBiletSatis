@@ -10,7 +10,7 @@ class FilmTurleriController extends controller
 		$data['title'] = 'Film Türleri';
         $data["filmTurleri"] = filmTurleri::getAll();
 
-        $this->render('FilmTurleri/FilmTurListesi', $data);
+        $this->render('Admin/FilmTurleri/FilmTurListesi', $data);
 	}
 
 	public function FilmTuruEkleAction()
@@ -19,7 +19,7 @@ class FilmTurleriController extends controller
         $data['uyari'] = null;
         $data['result'] = null;
 
-		return $this->render('FilmTurleri/FilmTurEkle', $data);
+		return $this->render('Admin/FilmTurleri/FilmTurEkle', $data);
     }
 
     public function FilmTuruEklePostAction()
@@ -32,7 +32,7 @@ class FilmTurleriController extends controller
 
         if(strlen($kayitFilmTur)<=0 && !$kayitFilmTur){
             $data['uyari'] = 'Film Türü Bilgisi Bol Olamaz';
-		    return $this->render('FilmTurleri/FilmTurEkle', $data);
+		    return $this->render('Admin/FilmTurleri/FilmTurEkle', $data);
         }
         
  		if($kayitFilmTur){
@@ -40,7 +40,7 @@ class FilmTurleriController extends controller
             $data['result'] = $result;
         }
         
-		return $this->render('FilmTurleri/FilmTurEkle', $data);
+		return $this->render('Admin/FilmTurleri/FilmTurEkle', $data);
 	}
     
 	private function FilmTuruDatabaseKayit($filmTuru)
@@ -71,13 +71,13 @@ class FilmTurleriController extends controller
         }catch(Exception $e)
         {
             $data['uyari'] = "Film Türü Kullanıldığı İçin Silinemedi"; 
-		    return $this->render('FilmTurleri/FilmTurListesi', $data);
+		    return $this->render('Admin/FilmTurleri/FilmTurListesi', $data);
         } 
 
         $data["filmTurleri"] = filmTurleri::getAll();
         
         $data['result'] = "Film Türü Silindi"; 
-		return $this->render('FilmTurleri/FilmTurListesi', $data);
+		return $this->render('Admin/FilmTurleri/FilmTurListesi', $data);
     }
 
 }
