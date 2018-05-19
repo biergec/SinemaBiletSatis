@@ -23,6 +23,16 @@
 <![endif]-->
 </head>
 <body class="fix-header fix-sidebar">
+<?php 
+	if(!isset($_SESSION)){
+		session_start();
+	}
+?>
+    <?php 
+        if(!isset($_SESSION["mail"])){
+            header("Location: ./"); 
+        }
+    ?>
 	 <!-- Preloader - style you can find in spinners.css -->
 	 <div class="preloader">
         <svg class="circular" viewBox="25 25 50 50">
@@ -35,7 +45,7 @@
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
                 <!-- Logo -->
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="./">
+                    <a class="navbar-brand" href="./?url=adminAnaSayfasi/index">
                         <!-- Logo icon -->
                         <b><img src="images/logo.png" alt="homepage" class="dark-logo" /></b>
                         <!--End Logo icon -->
@@ -67,9 +77,11 @@
                         <li class="nav-devider"></li>
                         <li class="nav-label">Yönetim</li>
                         <li>
-                            <a href="./"><i class="ti-dashboard"></i><span class="hide-menu">Genel Balkış</span></a>
+                            <a href="./?url=adminAnaSayfasi/index"><i class="ti-dashboard"></i><span class="hide-menu">Genel Balkış</span></a>
                         </li>
-
+                        <li>
+                            <a href="./"><i class="ti-dashboard"></i><span class="hide-menu">Siteye Dön</span></a>
+                        </li>
                         <li class="nav-label">Bilgi İşlem</li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="ti-user"></i><span class="hide-menu">Oyuncular
                         </span></a>

@@ -61,6 +61,19 @@
 </head>
 	
 <body>
+<!-- Session Kontrolü -->
+<?php 
+	if(!isset($_SESSION)){
+		session_start();
+	}
+	if(isset($cikisYap)){
+		if($cikisYap == 1){
+			session_destroy();
+			header("Location: ./");
+		}
+	}
+?>
+
 <!-- header -->
 	<div class="header">
 		<div class="container">
@@ -72,7 +85,11 @@
 			</div>
 			<div class="w3l_sign_in_register">
 				<ul>
-					<li><a href="#" data-toggle="modal" data-target="#myModal">Giriş Yap</a></li>
+					<?php if(isset($_SESSION["mail"]) && isset($_SESSION["kullanici"]))	{ ?>
+						<li><a href="#" data-toggle="modal" data-target="#myModal">Profil</a></li>
+					<?php	}else{ ?>
+					<li><a href="#" data-toggle="modal" data-target="#myModal">Giriş Yap / Kayıt Ol</a></li>
+					<?php }	?>
 				</ul>
 			</div>
 			<div class="clearfix"> </div>
@@ -84,50 +101,19 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					Giriş Yap & Kayıt Ol
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
+					<?php 
+					if(isset($_SESSION["mail"]) && isset($_SESSION["kullanici"]))
+					{
+						include 'headerGirisYapanKullanici.php';
+					}else{
+						include 'headerLoginEkrani.php';
+					}
+					?>
 				</div>
-				<section>
-					<div class="modal-body">
-						<div class="w3_login_module">
-							<div class="module form-module">
-							  <div class="toggle"><i class="fa fa-times fa-pencil"></i>
-								<div class="tooltip">Tıklayın</div>
-							  </div>
-							  <div class="form">
-								<h3>Hesabınız ile giriş yapın</h3>
-								<form action="#" method="post">
-								  <input type="text" name="mail" placeholder="E-Posta Adresiniz" required="">
-								  <input type="password" name="Password" placeholder="Şifreniz" required="">
-								  <input type="submit" value="Giriş Yap">
-								</form>
-							  </div>
-							  <div class="form">
-								<h3>Yeni Hesap Oluştur</h3>
-								<form action="#" method="post">
-								  <input type="text" name="Ad" placeholder="Adınız*" required="">
-								  <input type="text" name="Soyad" placeholder="Soyadınız*" required="">
-									<p>Cinsiyetiniz :* <select>
-										<option value="Kadin">Kadın</option>
-										<option value="Erkek">Erkek</option>
-									</select></p><br>
-								  <input type="text" name="Yas" placeholder="Yaşınızı Giriniz*" required="">
-								  <input type="password" name="Password" placeholder="Şifreniz*" required="">
-								  <input type="password" name="PasswordTekrar" placeholder="Şifreniz Tekrar*" required="">
-								  <input type="email" name="Email" placeholder="Mail Adresiniz*" required="">
-								  <input type="text" name="Phone" placeholder="Telefon Numaranız*" required="">
-								  <input type="submit" value="Kayıt Ol">
-								</form>
-							  </div>
-							  <div class="cta"><a href="#">Şifremi Unuttum</a></div>
-							</div>
-						</div>
-					</div>
-				</section>
-			</div>
 		</div>
 	</div>
-	<script>
+
+<script>
 		$('.toggle').click(function(){
 		  // Switches the Icon
 		  $(this).children('i').toggleClass('fa-pencil');
@@ -157,7 +143,7 @@
 				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
 					<nav>
 						<ul class="nav navbar-nav">
-							<li class="active"><a href="index.html">Ana Sayfa</a></li>
+							<li class="active"><a href="./">Ana Sayfa</a></li>
 							<li><a href="SSS.html">SSS</a></li>
 						</ul>
 					</nav>
