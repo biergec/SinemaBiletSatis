@@ -29,6 +29,17 @@ class slondakigosterilenfilmler
 
 		return $list;
 	  }
+	  public static function get($film_id) {
+		$list = [];
+		$db = Db::getInstance();
+		$req = $db->query("SELECT * FROM sinema_film_salon where film_id='".$film_id."'");
+  
+		foreach($req->fetchAll() as $post) {
+            $list[] = new slondakigosterilenfilmler($post['salon_id'],$post['film_id'],$post['baslama_zamani'],$post['bitis_zamani'],$post['sinema_film_salon_id']);
+		}
+
+		return $list;
+	  }
 }
 
 
