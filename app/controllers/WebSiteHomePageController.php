@@ -22,7 +22,9 @@ class WebSiteHomePageController extends controller
 			$this->render('FilmBilgileri',$data);
 		}
 	}
-	
+
+		$this->render('index',$data);
+	}
 	public function uyeOlAction()
 	{
 		$data['uyari']=null;

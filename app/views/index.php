@@ -1,6 +1,15 @@
 <?php require VDIR.'/header.php' ?>
 
 <!-- banner -->
+	<div id="slidey" style="display:none;">
+		<ul>
+			<li><img src="images/5.jpg" alt=" "><p class='title'>Tarzan</p><p class='description'>Örnek tanıtım metni</p></li>
+			<li><img src="images/2.jpg" alt=" "><p class='title'>Maximum Ride</p><p class='description'>Örnek tanıtım metni</p></li>
+			<li><img src="images/3.jpg" alt=" "><p class='title'>Independence</p><p class='description'>Örnek tanıtım metni</p></li>
+			<li><img src="images/2.jpg" alt=" "><p class='title'>Maximum Ride</p><p class='description'>Örnek tanıtım metni</p></li>
+			<li><img src="images/5.jpg" alt=" "><p class='title'>Tarzan</p><p class='description'>Örnek tanıtım metni</p></li>
+		</ul>   	
+    </div>
     <script src="js/jquery.slidey.js"></script>
     <script src="js/jquery.dotdotdot.min.js"></script>
 	   <script type="text/javascript">
@@ -14,6 +23,7 @@
 		</script>
 <!-- //banner -->
 <!-- banner-bottom -->
+
 	<?php
 
 		
@@ -62,6 +72,7 @@ $db = Db::getInstance();
 				<div id="myTabContent" class="tab-content">
 					<div role="tabpanel" class="tab-pane fade active in" id="home" aria-labelledby="home-tab">
 						<div class="w3_agile_featured_movies">
+
 						<?php
  						foreach($vizyondakiFilmler  as $film) { 
 						$sorgu = "SELECT * FROM filmler WHERE film_id = '".$film->film_id."'";
@@ -79,6 +90,7 @@ $db = Db::getInstance();
 									</div>
 									<div class="mid-2 agile_mid_2_home">
 										<p><center><?php echo $name['vizyonTarihi'] ?></center></p>
+
 										<div class="clearfix"></div>
 									</div>
 								</div>
