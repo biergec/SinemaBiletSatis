@@ -1,19 +1,5 @@
 <?php require VDIR.'/header.php' ?>
 
-<!-- banner -->
-    <script src="js/jquery.slidey.js"></script>
-    <script src="js/jquery.dotdotdot.min.js"></script>
-	   <script type="text/javascript">
-			$("#slidey").slidey({
-				interval: 8000,
-				listCount: 5,
-				autoplay: false,
-				showList: true
-			});
-			$(".slidey-list-description").dotdotdot();
-		</script>
-<!-- //banner -->
-<!-- banner-bottom -->
     <?php
     $db = Db::getInstance();
     $req = $db->query("SELECT * FROM filmler where film_id='".$filmb['film_id']."'");

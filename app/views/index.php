@@ -31,17 +31,16 @@ $db = Db::getInstance();
 						$sorgu = "SELECT * FROM filmler WHERE film_id = '".$film->film_id."'";
 						$req = $db->query($sorgu);
 						$name = $req->fetch(PDO::FETCH_ASSOC);?>
-						<div class="w3l-movie-gride-agile w3l-movie-gride-agile1">
+						<div class="w3l-movie-gride-agile w3l-movie-gride-agile1" style="width:300px; heigth:200px;">
 							<form action="./?url=WebSiteHomePage/FilmBilgileri" method="Post">
-							
-								<button   type="Submit" style="background:white;border:1px"  class="hvr-shutter-out-horizontal" id="film"   name="film" value="<?php echo $name['film_id'];?>" class="btn btn-primary"><img src="images/1.jpg" title="album-name" class="img-responsive" alt=" "></button>
+								<button   type="Submit" style="background:white;border:1px"  class="hvr-shutter-out-horizontal" id="film"   name="film" value="<?php echo $name['film_id'];?>" class="btn btn-primary"><img src="images/1.jpg" title="album-name"  style="width:400px; heigth:300px;" alt=" "></button>
 									<div class="w3l-action-icon"><i aria-hidden="true"></i></div>
 							 
 								<div class="mid-1 agileits_w3layouts_mid_1_home">
-								<div class="w3l-movie-text">
+								<div class="w3l-movie-text"style="width:400px; heigth:300px;">
 								<button style="background:white;border:1px" id="film" name="film" value="<?php echo $name['film_id'] ?>"> <?php echo $name['filmAd'] ?></h6></button>						
 								</div>
-								<div class="mid-2 agile_mid_2_home">
+								<div class="mid-2 agile_mid_2_home"style="width:400px; heigth:300px;">
 										<p><center><?php echo $name['vizyonTarihi'] ?></center></p>
 								</div>
 							</div>
@@ -67,17 +66,17 @@ $db = Db::getInstance();
 						$sorgu = "SELECT * FROM filmler WHERE film_id = '".$film->film_id."'";
 						$req = $db->query($sorgu);
 						$name = $req->fetch(PDO::FETCH_ASSOC);?>
-							<div class="col-md-2 w3l-movie-gride-agile">
+							<div class="col-md-2 w3l-movie-gride-agile" style="width:400px; heigth:300px;">
 							<form action="./?url=WebSiteHomePage/FilmBilgileri" method="Post">
-							<button   type="Submit" style="background:white;border:1px"  class="hvr-shutter-out-horizontal" id="film"   name="film" value="<?php echo $name['film_id'];?>" class="btn btn-primary"><img src="images/2.jpg" title="album-name" class="img-responsive" alt=" "></button>
+							<button   type="Submit" style="background:white;border:1px"  class="hvr-shutter-out-horizontal" id="film"   name="film" value="<?php echo $name['film_id'];?>" class="btn btn-primary"><img src="images/2.jpg" title="album-name" style="width:400px; heigth:300px;" alt=" "></button>
 														
 									<div class="w3l-action-icon"><i  aria-hidden="true"></i></div>
 								</a>
-								<div class="mid-1 agileits_w3layouts_mid_1_home">
+								<div class="mid-1 agileits_w3layouts_mid_1_home"style="width:400px; heigth:300px;">
 									<div class="w3l-movie-text">
 									<button style="background:white;border:1px" id="film" name="film" value="<?php echo $name['film_id'] ?>"> <?php echo $name['filmAd'] ?></h6></button>							
 									</div>
-									<div class="mid-2 agile_mid_2_home">
+									<div class="mid-2 agile_mid_2_home" style="width:400px; heigth:300px;">
 										<p><center><?php echo $name['vizyonTarihi'] ?></center></p>
 										<div class="clearfix"></div>
 									</div>
