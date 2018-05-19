@@ -144,7 +144,6 @@
 					<nav>
 						<ul class="nav navbar-nav">
 							<li class="active"><a href="./">Ana Sayfa</a></li>
-							<li><a href="SSS.html">SSS</a></li>
 						</ul>
 					</nav>
 				</div>

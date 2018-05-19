@@ -115,6 +115,4 @@ class WebSiteHomePageController extends controller
 		$this->render('kullaniciProfil',$data);
 	}
 
-
-
 }
