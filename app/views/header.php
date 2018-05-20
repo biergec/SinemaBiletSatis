@@ -42,6 +42,16 @@
 		});
 	 
 	}); 
+
+ function atleast_onecheckbox(e) {
+  if ($("input[type=checkbox]:checked").length === 0) {
+      e.preventDefault();
+      alert('Lütfen En Az Bir Seçim Yapınız.');
+      return false;
+  }
+  
+}
+
 </script> 
 
 <!-- //banner-bottom-plugin -->
@@ -78,7 +88,7 @@
 	<div class="header">
 		<div class="container">
 			<div class="w3layouts_logo">
-				<a href="/"><h1>Sinema<span>Rezervasyon</span></h1></a>
+				<a href="./"><h1>Sinema<span>Bilet Satış</span></h1></a>
 			</div>
 			<div class="w3_search">
 				<!--  Arama çubuğu yeri -->

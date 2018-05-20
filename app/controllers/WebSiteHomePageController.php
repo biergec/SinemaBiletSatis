@@ -23,6 +23,26 @@ class WebSiteHomePageController extends controller
 			return $this->render('FilmBilgileri',$data);
 		}
 
+		$data['vizyondakiFilmler'] = vizyondakiFilmler::getAll();
+		$data['yakindakifilmler'] = yakindakifilmler::getAll();
+		$data['uyari'] ="İstediğiniz Film Bulunamadı."; 
+		$this->render('index',$data);
+	}
+
+	public function FilmBilgileriYakindakilerAction()
+	{
+		$film_id = $_POST['film'];
+
+		if($film_id)
+		{
+			$data['filmb']=film::get($film_id);
+			$data['slon']=slondakigosterilenfilmler::get($film_id);
+			return $this->render('FilmBilgileriYakindakiler',$data);
+		}
+
+		$data['vizyondakiFilmler'] = vizyondakiFilmler::getAll();
+		$data['yakindakifilmler'] = yakindakifilmler::getAll();
+		$data['uyari'] ="İstediğiniz Film Bulunamadı."; 
 		$this->render('index',$data);
 	}
 
@@ -282,6 +302,29 @@ class WebSiteHomePageController extends controller
 		$data['kullanici'] = $kullanici;
 
 		$this->render('kullaniciProfil',$data);
+	}
+
+	public function SatinAlinanBiletlerAction()
+	{
+        $Mail = $_POST['Mail'];
+		
+		if(!$Mail){
+			$data['vizyondakiFilmler'] = vizyondakiFilmler::getAll();
+			$data['yakindakifilmler'] = yakindakifilmler::getAll();
+			return $this->render('index',$data);
+		}
+
+		$db = Db::getInstance();
+		$sorgu = "SELECT * FROM kullanici WHERE mail = '".$Mail."' ";
+		$req = $db->query($sorgu);
+		$kullanici = $req->fetch(PDO::FETCH_ASSOC);
+
+		$sorgu = "SELECT * FROM filmler INNER join sinema_film_salon on filmler.film_id = sinema_film_salon.film_id INNER join sinema_film_salonlari ON sinema_film_salon.salon_id=sinema_film_salonlari.salon_id WHERE filmler.film_id IN (SELECT film_id FROM sinema_film_salon WHERE salon_id IN (SELECT salon_id FROM sinema_film_satin_alinan_biletler where kullanici_id IN (SELECT kullanici_id FROM kullanici WHERE mail='".$Mail."' )) AND baslama_zamani IN (SELECT filmBaslangicSaati FROM sinema_film_satin_alinan_biletler where kullanici_id IN (SELECT kullanici_id FROM kullanici WHERE mail='".$Mail."' )) )";
+
+		$req = $db->query($sorgu);
+		$data['biletler'] = $req;
+
+		$this->render('satinAlinanBiletler',$data);
 	}
 
 }

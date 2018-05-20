@@ -1,13 +1,10 @@
 <?php require VDIR.'/header.php' ?>
 
-
-
 <div class="container">
 <div class="row">
     
-
+<!-- banner-bottom -->
 <?php
-
     $db = Db::getInstance();
     $req = $db->query("SELECT * FROM filmler where film_id='".$filmb['film_id']."'");
     $name = $req->fetch(PDO::FETCH_ASSOC);
@@ -18,12 +15,14 @@
                 <div class="col-md-3">
 						<div class="w3l-movie-gride-agile w3l-movie-gride-agile1">
                                 <button   type="Submit" style="background:white;border:1px"  class="hvr-shutter-out-horizontal" id="film"   name="film" value="<?php $filmb['film_id'];?>">
+
                                 <?php 
 								if($name['yol']!="Null"){?>
 									<img src="<?php echo "images/".$name['yol']." "; ?>" title="album-name" class="img-responsive" alt=" "></button>
 								<?php }else{?>
 									<img src="images/h1.jpg" title="album-name" class="img-responsive" alt=" "></button>
 								<?php }?>
+                            
                             </button>
 									<div class="w3l-action-icon"><i aria-hidden="true"></i></div>
 							 
@@ -47,35 +46,8 @@
                 </div>
 <br>
 
-<div class="row">
-<form action="./?url=WebSiteHomePage/FilmSeansBiletAl" method="Post">  
-
-            <label for="labelsalon">Film Seansları</label><br>
-            <select class="custom-select" id="filmSeans" name="filmSeans" required>
-            <?php foreach($slon as $slon) { 
-                $req3 = $db->query("SELECT * FROM sinema_film_salonlari where salon_id='".$slon->salon_id."'");
-                $name3 = $req3->fetch(PDO::FETCH_ASSOC);?>
-
-                <option value=<?php echo $slon->sinema_film_salon_id; ?> > <?php echo "Salon : "; echo $name3['salonAdi']; echo "-  Seans Saati: ";  echo$slon->baslama_zamani; ?> </option>
-                
-                <?php } ?>
-              </select>
-                <?php if(isset($_SESSION["mail"]) && isset($_SESSION["kullanici"]))	{ ?>
-                    <br>
-                    <br>
-                    <button  class="btn btn-warning btn-lg active" type="Submit">Seansa Bilet Satın Al</button>
-                <?php }else{?>
-                    <b>
-                    <p style="color:red">Bilet Satın Alabilmek İçin Üye Girişi Yapmalısınız</p>
-                    </b>
-                <?php } ?>
-			    
-                </form>	
-
-                </div>
-            </div>	
 </div>
-            
+</div>
 </div>
 </div>
 

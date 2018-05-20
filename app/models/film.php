@@ -9,9 +9,13 @@ class film
     public $filmOzet;
     public $vizyonTarihi;
 	public $filmTuru_id;
-    public $filmFiyat;
-	public function film($film_id, $kategori_id, $filmAd,$filmSuresi, $yonetmen_id, $filmOzet,$vizyonTarihi, $filmTuru_id, $filmFiyat)
+	public $filmFiyat;
+	public $yol;
+	
+
+	public function film($film_id, $kategori_id, $filmAd,$filmSuresi, $yonetmen_id, $filmOzet,$vizyonTarihi, $filmTuru_id, $filmFiyat, $yol)
 	{
+		$this->yol = $yol;
 		$this->film_id = $film_id;
 		$this->kategori_id = $kategori_id;
         $this->filmAd = $filmAd;
@@ -29,7 +33,7 @@ class film
 		$req = $db->query('SELECT * FROM filmler');
   
 		foreach($req->fetchAll() as $post) {
-          $list[] = new film($post['film_id'],$post['kategori_id'],$post['filmAd'],$post['filmSuresi'],$post['yonetmen_id'],$post['filmOzet'],$post['vizyonTarihi'],$post['filmTuru_id'],$post['filmFiyat']);
+          $list[] = new film($post['film_id'],$post['kategori_id'],$post['filmAd'],$post['filmSuresi'],$post['yonetmen_id'],$post['filmOzet'],$post['vizyonTarihi'],$post['filmTuru_id'],$post['filmFiyat'],$post['yol']);
 		}
 
 		return $list;

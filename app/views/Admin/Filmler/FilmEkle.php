@@ -10,12 +10,19 @@
            }
            ?>
             
-            <form action="./?url=Film/FilmEklePost" onsubmit="return atleast_onecheckbox(event)" method="Post">
+
+            <form action="./?url=Film/FilmEklePost" method="Post" enctype="multipart/form-data">
+
             <div class="row">
             <div class="col-md-6">
             
             <div class="form-group">
     
+            <label for="labelsalon">Film Resim Seçiniz</label><br>
+            <input type="file" name="dosya" id="dosya">
+            <br>
+            <br>
+
             <label for="labelsalon">Film Adı</label>
             <input type="text" class="form-control" name="filmAdi" required>
             <br>
