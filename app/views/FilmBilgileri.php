@@ -1,13 +1,9 @@
 <?php require VDIR.'/header.php' ?>
 
-
-
 <div class="container">
 <div class="row">
-    
 
 <?php
-
     $db = Db::getInstance();
     $req = $db->query("SELECT * FROM filmler where film_id='".$filmb['film_id']."'");
     $name = $req->fetch(PDO::FETCH_ASSOC);
@@ -42,6 +38,15 @@
                 <div class="alert alert-info" >
                    <p style="font-size:18px;"> Film Adı &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;:  <?php  echo $name['filmAd'] ?></p>
                    <p style="font-size:18px;"> Vizyon Tarihi  &nbsp; &nbsp;:  <?php echo $name['vizyonTarihi'] ?></p>
+                   <hr>
+                   <p style="font-size:18px;"> Film Kategorisi  &nbsp; &nbsp;:  <?php echo $kategoriAD['kategoriAd'] ?></p>
+                   <hr>
+                   <p style="font-size:18px;"> Film Türü  &nbsp; &nbsp;:  <?php echo $filmTur['filmTurAd'] ?></p>
+                   <p style="font-size:18px;"> Yönetmen  &nbsp; &nbsp;:  <?php echo $yonetmen['yonetmenAd'] ?></p>
+                   <p style="font-size:18px;"> Oyuncular : <?php foreach($FilmOyuncular as $FilmOyuncular){
+                       echo $FilmOyuncular['oyuncuAd'] ; echo ", ";
+                   } ?></p>
+                     <hr>
                    <p style="font-size:18px;"> Film Fiyatı &nbsp; &nbsp; &nbsp; &nbsp;:  <?php echo $name['filmFiyat'] ?> TL</p>
                    <p style="font-size:18px;"> Film Özeti &nbsp; &nbsp; &nbsp; &nbsp;:  <?php echo $name['filmOzet'] ?></p>
                 </div>

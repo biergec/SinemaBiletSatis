@@ -110,7 +110,7 @@ class FilmController extends controller
             return "Film Kayıt Edildi. -> ".$filmAdi." ";       
         }catch(Exception $e)
         {
-            return "Hata. -> ".$filmAdi." ";       
+            return "Hata. -> ".$e." ";       
         }
     }
 
@@ -127,7 +127,8 @@ class FilmController extends controller
             $req = $db->query($sorgu);
         }catch(Exception $e)
         {
-            $data['uyari'] = "Film Silinemedi"; 
+            $data['uyari'] = "Film Kullanıldığı İçin Silinememektedir."; 
+            $data["film"] = film::getAll();
 		    return $this->render('Admin/Filmler/FilmListesi', $data);
         }finally{
             $data["film"] = film::getAll();

@@ -12,10 +12,8 @@
   }
 }
     </script>
-    
 
-
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -95,7 +93,42 @@
                         <li>
                             <a href="./"><i class="ti-arrow-left"></i><span class="hide-menu">Siteye Dön</span></a>
                         </li>
-                        <li class="nav-label">Bilgi İşlem</li>
+
+                        <li class="nav-label">Film Ekleme</li>
+                        <li> <a class="has-arrow " href="#" aria-expanded="false"><i class="ti-video-clapper"></i><span class="hide-menu">Film İşlemleri
+                        </span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="?url=Film/FilmListesi">Film Listesi</a></li>
+                                <li><a href="?url=Film/FilmEkle">Film Ekle</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-label">Film Vizyona Alma</li>
+                        <li> <a class="has-arrow " href="#" aria-expanded="false"><i class="ti-timer"></i><span class="hide-menu">Ekle -> Yakındaki Filmler
+                        </span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="?url=FilmVizyonaAlmaIslemleri/yakindekilerIndex">Yakındaki Film Listesi</a></li>
+                                <li><a href="?url=FilmVizyonaAlmaIslemleri/yakindekiFilmlerEkleme">Yakındaki Filmlere Ekle</a></li>
+                            </ul>
+                        </li>
+
+                        <li> <a class="has-arrow " href="#" aria-expanded="false"><i class="ti-blackboard"></i><span class="hide-menu">Ekle -> Vizyondaki Filmler
+                        </span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="?url=FilmVizyonaAlmaIslemleri/VizyondakilerFilmListesi">Vizyondakiler Film Listesi</a></li>
+                                <li><a href="?url=FilmVizyonaAlmaIslemleri/VizyondakilerFilmEkle">Vizyondakiler Film Ekle</a></li>
+                            </ul>
+                        </li>
+
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="ti-video-clapper"></i><span class="hide-menu">Salon Film Ekleme
+                        </span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="?url=SalonaFilmEkleme/SalonFilm">Salondaki Filmleri Listesi</a></li>
+                                <li><a href="?url=SalonaFilmEkleme/SalonaFilmEkle">Salonlara Film Ekle</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-label">Ekleme İşlemleri</li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="ti-user"></i><span class="hide-menu">Oyuncular
                         </span></a>
                             <ul aria-expanded="false" class="collapse">
@@ -119,7 +152,6 @@
                                 <li><a href="?url=Kategoriler/KategoriEkleme">Kategori Ekleme</a></li>
                             </ul>
                         </li>
-
                               
                         <li><a class="has-arrow" href="#" aria-expanded="false"><i class="ti-pin-alt"></i><span class="hide-menu">Film Türleri İşlemleri
 
@@ -131,6 +163,14 @@
                         </li>
                             
 
+                        <li> <a class="has-arrow" href="#" aria-expanded="false"><i class="ti-calendar"></i><span class="hide-menu">Sinema Salon İşlemleri
+                        </span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="?url=FilmSalonlari/FilmSalonlari">Salon Listesi</a></li>
+                                <li><a href="?url=FilmSalonlari/FilmSalonEkle">Yeni Sinema Salonu Ekle</a></li>
+                            </ul>
+                        </li>                     
+                        
                         <li> <a class="has-arrow" href="#" aria-expanded="false"><i class="ti-ticket"></i><span class="hide-menu">PNR İşlemleri
                         </span></a>
                             <ul aria-expanded="false" class="collapse">
@@ -139,46 +179,6 @@
                             </ul>
                         </li>
 
-                        <li> <a class="has-arrow" href="#" aria-expanded="false"><i class="ti-calendar"></i><span class="hide-menu">Sinema Salon İşlemleri
-                        </span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="?url=FilmSalonlari/FilmSalonlari">Salon Listesi</a></li>
-                                <li><a href="?url=FilmSalonlari/FilmSalonEkle">Yeni Sinema Salonu Ekle</a></li>
-                            </ul>
-                        </li>
-
-                        <li> <a class="has-arrow " href="#" aria-expanded="false"><i class="ti-video-clapper"></i><span class="hide-menu">Film İşlemleri
-                        </span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="?url=Film/FilmListesi">Film Listesi</a></li>
-                                <li><a href="?url=Film/FilmEkle">Film Ekle</a></li>
-                            </ul>
-                        </li>
-
-                        <li> <a class="has-arrow " href="#" aria-expanded="false"><i class="ti-timer"></i><span class="hide-menu">Yakındaki Filmler
-                        </span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="?url=FilmVizyonaAlmaIslemleri/yakindekilerIndex">Yakındaki Film Listesi</a></li>
-                                <li><a href="?url=FilmVizyonaAlmaIslemleri/yakindekiFilmlerEkleme">Yakındaki Filmlere Ekle</a></li>
-                            </ul>
-                        </li>
-
-
-                        <li> <a class="has-arrow " href="#" aria-expanded="false"><i class="ti-blackboard"></i><span class="hide-menu">Film Vizyon İşlemleri
-                        </span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="?url=FilmVizyonaAlmaIslemleri/VizyondakilerFilmListesi">Vizyondakiler Film Listesi</a></li>
-                                <li><a href="?url=FilmVizyonaAlmaIslemleri/VizyondakilerFilmEkle">Vizyondakiler Film Ekle</a></li>
-                            </ul>
-                        </li>
-
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="ti-video-clapper"></i><span class="hide-menu">Salon Film İşlemleri
-                        </span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="?url=SalonaFilmEkleme/SalonFilm">Salondaki Filmleri Listesi</a></li>
-                                <li><a href="?url=SalonaFilmEkleme/SalonaFilmEkle">Salonlara Film Ekle</a></li>
-                            </ul>
-                        </li>
                         <li> <a class="has-arrow" href="#" aria-expanded="false"><i class=" ti-panel"></i><span class="hide-menu">Kullanıcı İşlemleri
                         </span></a>
                             <ul aria-expanded="false" class="collapse">

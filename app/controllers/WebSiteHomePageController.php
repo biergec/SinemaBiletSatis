@@ -18,8 +18,31 @@ class WebSiteHomePageController extends controller
 
 		if($film_id)
 		{
-			$data['filmb']=film::get($film_id);
+			$db = Db::getInstance();
+
+			$filmBilgileri = film::get($film_id);
+			$data['filmb']= $filmBilgileri;
 			$data['slon']=slondakigosterilenfilmler::get($film_id);
+
+			$sorgu = "SELECT kategoriAd FROM kategoriler WHERE kategori_id = ".$filmBilgileri['kategori_id']." ";
+			$req = $db->query($sorgu);
+			$kategoriAD = $req->fetch(PDO::FETCH_ASSOC);
+			$data['kategoriAD']= $kategoriAD;
+
+			$sorgu = "SELECT oyuncuAd FROM oyuncular INNER join film_oyuncular ON film_oyuncular.oyuncu_id = oyuncular.oyuncu_id WHERE film_oyuncular.film_id =".$film_id." ";
+			$req = $db->query($sorgu);
+			$data['FilmOyuncular']= $req;
+			
+			$sorgu = "SELECT filmTurAd FROM film_turleri WHERE tur_id = ".$filmBilgileri['filmTuru_id']." ";
+			$req = $db->query($sorgu);
+			$filmTur = $req->fetch(PDO::FETCH_ASSOC);
+			$data['filmTur']= $filmTur;
+
+			$sorgu = "SELECT yonetmenAd FROM yonetmenler WHERE yonetmen_id = ".$filmBilgileri['yonetmen_id']." ";
+			$req = $db->query($sorgu);
+			$yonetmen = $req->fetch(PDO::FETCH_ASSOC);
+			$data['yonetmen']= $yonetmen;
+
 			return $this->render('FilmBilgileri',$data);
 		}
 
@@ -35,8 +58,31 @@ class WebSiteHomePageController extends controller
 
 		if($film_id)
 		{
-			$data['filmb']=film::get($film_id);
+			$db = Db::getInstance();
+			
+			$filmBilgileri = film::get($film_id);
+			$data['filmb']=$filmBilgileri;
 			$data['slon']=slondakigosterilenfilmler::get($film_id);
+
+			$sorgu = "SELECT kategoriAd FROM kategoriler WHERE kategori_id = ".$filmBilgileri['kategori_id']." ";
+			$req = $db->query($sorgu);
+			$kategoriAD = $req->fetch(PDO::FETCH_ASSOC);
+			$data['kategoriAD']= $kategoriAD;
+
+			$sorgu = "SELECT oyuncuAd FROM oyuncular INNER join film_oyuncular ON film_oyuncular.oyuncu_id = oyuncular.oyuncu_id WHERE film_oyuncular.film_id =".$filmBilgileri['film_id']." ";
+			$req = $db->query($sorgu);
+			$data['FilmOyuncular']= $req;
+			
+			$sorgu = "SELECT filmTurAd FROM film_turleri WHERE tur_id = ".$filmBilgileri['filmTuru_id']." ";
+			$req = $db->query($sorgu);
+			$filmTur = $req->fetch(PDO::FETCH_ASSOC);
+			$data['filmTur']= $filmTur;
+
+			$sorgu = "SELECT yonetmenAd FROM yonetmenler WHERE yonetmen_id = ".$filmBilgileri['yonetmen_id']." ";
+			$req = $db->query($sorgu);
+			$yonetmen = $req->fetch(PDO::FETCH_ASSOC);
+			$data['yonetmen']= $yonetmen;
+
 			return $this->render('FilmBilgileriYakindakiler',$data);
 		}
 
@@ -66,6 +112,27 @@ class WebSiteHomePageController extends controller
 			$sorgu = "SELECT * FROM filmler WHERE film_id = ".$sinema_film_salonBilgileri['film_id']." ";
 			$req = $db->query($sorgu);
 			$filmBilgileri = $req->fetch(PDO::FETCH_ASSOC);
+
+
+			$sorgu = "SELECT kategoriAd FROM kategoriler WHERE kategori_id = ".$filmBilgileri['kategori_id']." ";
+			$req = $db->query($sorgu);
+			$kategoriAD = $req->fetch(PDO::FETCH_ASSOC);
+			$data['kategoriAD']= $kategoriAD;
+
+			$sorgu = "SELECT oyuncuAd FROM oyuncular INNER join film_oyuncular ON film_oyuncular.oyuncu_id = oyuncular.oyuncu_id WHERE film_oyuncular.film_id =".$filmBilgileri['film_id']." ";
+			$req = $db->query($sorgu);
+			$data['FilmOyuncular']= $req;
+			
+			$sorgu = "SELECT filmTurAd FROM film_turleri WHERE tur_id = ".$filmBilgileri['filmTuru_id']." ";
+			$req = $db->query($sorgu);
+			$filmTur = $req->fetch(PDO::FETCH_ASSOC);
+			$data['filmTur']= $filmTur;
+
+			$sorgu = "SELECT yonetmenAd FROM yonetmenler WHERE yonetmen_id = ".$filmBilgileri['yonetmen_id']." ";
+			$req = $db->query($sorgu);
+			$yonetmen = $req->fetch(PDO::FETCH_ASSOC);
+			$data['yonetmen']= $yonetmen;
+			
 
         }catch(Exception $e)
         {
@@ -135,6 +202,25 @@ class WebSiteHomePageController extends controller
 			$data['toplamFiyat'] = $toplamFiyat ;
 			$data['filmSalonID'] = $salonID ;
 			$data['pnrindirimMiktari'] = $pnrindirimMiktari ;
+
+			$sorgu = "SELECT kategoriAd FROM kategoriler WHERE kategori_id = ".$filmBilgileri['kategori_id']." ";
+			$req = $db->query($sorgu);
+			$kategoriAD = $req->fetch(PDO::FETCH_ASSOC);
+			$data['kategoriAD']= $kategoriAD;
+
+			$sorgu = "SELECT oyuncuAd FROM oyuncular INNER join film_oyuncular ON film_oyuncular.oyuncu_id = oyuncular.oyuncu_id WHERE film_oyuncular.film_id =".$filmBilgileri['film_id']." ";
+			$req = $db->query($sorgu);
+			$data['FilmOyuncular']= $req;
+			
+			$sorgu = "SELECT filmTurAd FROM film_turleri WHERE tur_id = ".$filmBilgileri['filmTuru_id']." ";
+			$req = $db->query($sorgu);
+			$filmTur = $req->fetch(PDO::FETCH_ASSOC);
+			$data['filmTur']= $filmTur;
+
+			$sorgu = "SELECT yonetmenAd FROM yonetmenler WHERE yonetmen_id = ".$filmBilgileri['yonetmen_id']." ";
+			$req = $db->query($sorgu);
+			$yonetmen = $req->fetch(PDO::FETCH_ASSOC);
+			$data['yonetmen']= $yonetmen;
 		}else{
 			$data['girisHatasi'] = null;
 			$data['vizyondakiFilmler'] = vizyondakiFilmler::getAll();
@@ -323,7 +409,7 @@ class WebSiteHomePageController extends controller
 
 		$req = $db->query($sorgu);
 		$data['biletler'] = $req;
-
+	
 		$this->render('satinAlinanBiletler',$data);
 	}
 

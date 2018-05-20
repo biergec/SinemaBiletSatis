@@ -72,7 +72,7 @@ class FilmVizyonaAlmaIslemleriController extends controller
             $req = $db->query($sorgu);
         }catch(Exception $e)
         {
-            $data['uyari'] = "Yakındaki Film Silinemedi"; 
+            $data['uyari'] = "Yakındaki Film Kullanıldığı İçin Silinemedi"; 
 		    return $this->render('Admin/Yakindakiler/yakindekilerIndex', $data);
         }
         finally{
@@ -160,7 +160,7 @@ class FilmVizyonaAlmaIslemleriController extends controller
             $req = $db->query($sorgu);
         }catch(Exception $e)
         { 
-            $data['uyari'] = $e;
+            $data['uyari'] ="Film Kullanıldığı İçin Silinemedi.";
 		    $this->render('Admin/Yakindakiler/vizyondakiFilmlerListesi',$data);
         }finally{
             $data["vizyondakiFilmler"] = vizyondakiFilmler::getAll();

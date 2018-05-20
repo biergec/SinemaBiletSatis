@@ -3,7 +3,7 @@
 <form action="./?url=PNR/PNREklemePost" method="Post">
   <div class="form-group">
    
-  <label for="labelPNR">PNR İndirim Miktarı(Yüzde)</label>
+  <label for="labelPNR">PNR İndirim Miktarı TL</label>
     <input type="text" class="form-control"name="indirimMiktari" required>
   <br>
     <label for="labelKod">PNR Kodu</label>

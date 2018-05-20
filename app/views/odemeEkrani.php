@@ -38,10 +38,20 @@
                     <div class="col-md-9">
               <br>
                 <div class="alert alert-info" >
-                   <p style="font-size:18px;"> Film Adı &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;:  <?php  echo $filmBilgileri['filmAd'] ?></p>
+                <p style="font-size:18px;"> Film Adı &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;:  <?php  echo $filmBilgileri['filmAd'] ?></p>
                    <p style="font-size:18px;"> Vizyon Tarihi  &nbsp; &nbsp;:  <?php echo $filmBilgileri['vizyonTarihi'] ?></p>
+                   <hr>
+                   <p style="font-size:18px;"> Film Kategorisi  &nbsp; &nbsp;:  <?php echo $kategoriAD['kategoriAd'] ?></p>
+                   <hr>
+                   <p style="font-size:18px;"> Film Türü  &nbsp; &nbsp;:  <?php echo $filmTur['filmTurAd'] ?></p>
+                   <p style="font-size:18px;"> Yönetmen  &nbsp; &nbsp;:  <?php echo $yonetmen['yonetmenAd'] ?></p>
+                   <p style="font-size:18px;"> Oyuncular : <?php foreach($FilmOyuncular as $FilmOyuncular){
+                       echo $FilmOyuncular['oyuncuAd'] ; echo ", ";
+                   } ?></p>
+                     <hr>
                    <p style="font-size:18px;"> Film Fiyatı &nbsp; &nbsp; &nbsp; &nbsp;:  <?php echo $filmBilgileri['filmFiyat'] ?> TL</p>
                    <p style="font-size:18px;"> Film Özeti &nbsp; &nbsp; &nbsp; &nbsp;:  <?php echo $filmBilgileri['filmOzet'] ?></p>
+
                    <hr>
                    <p style="font-size:18px;"> Film Salon &nbsp; &nbsp; &nbsp; &nbsp;:  <?php echo $sinemaSalonKoltukSayisi['salonAdi'] ?></p>
                    <p style="font-size:18px;"> Seans Saati &nbsp; &nbsp; &nbsp; &nbsp;:  <?php echo $filmBaslamaZamani ?> :00</p>

@@ -18,6 +18,17 @@
                         <b>Başlangıç Saati :</b> <?php echo $biletler['baslama_zamani'];?>:00&nbsp;
                         <b>Film Süresi :</b> <?php echo $biletler['filmSuresi'];?>&nbsp;
                         <b>Film Fiyatı :</b> <?php echo $biletler['filmFiyat'];?>TL&nbsp;
+                        <br>
+                        <b>Satın Alinan Koltuklar :</b>&nbsp;
+                        <?php 
+                            $sorgu= "SELECT koltuk_numarasi FROM sinema_film_satin_alinan_biletler WHERE kullanici_id = ( SELECT kullanici_id FROM kullanici WHERE mail='".$_SESSION['mail']."' )
+                             AND  filmBaslangicSaati = '".$biletler['baslama_zamani']."' AND salon_id ='".$biletler['salon_id']."'";
+                            $db = Db::getInstance();
+                            $koltuklar = $db->query($sorgu);
+                            foreach($koltuklar as $koltuklar){
+                                echo $koltuklar['koltuk_numarasi']; echo " - ";
+                            }
+                        ?>
                         </div>
                         <?php } ?>
                         &nbsp;
