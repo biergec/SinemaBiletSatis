@@ -7,7 +7,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 .kullaniciBilgileriSagUstKose{
 	width: 100%;
-	
+}
+
+.indexBilgilendirme{
+	background-color: #ff8d1b;
+	color: #000;
+	padding: 1.2em;
+	margin-top: 20px;
+	font-size: 20px;
 }
 
 .checkboxes{

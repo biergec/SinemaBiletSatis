@@ -1,39 +1,22 @@
 <?php require VDIR.'/header.php' ?>
-  
-<div class="alert alert-warning alert-dismissible fade show" role="alert">
-  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
-<div class="alert alert-warning alert-dismissible fade show" role="alert">
-<p style="color:black">asdsa
-</p>
-  <p style="color:black">
-  <strong>  <?php 
+
+<div class="container">
+<div class="row ">
+<br>
+<strong>  
+	<?php 
   if(isset($uyari)){
     echo $uyari;
   }
 
-?>
-<?php 
- if(isset($result)){
-  echo $result;
-}
-?></strong> 
-  </p>
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
+  if(isset($result)){
+  echo $result; }?>
+<br>
+</strong> 
+</div>
 </div>
 
-
-
-<?php
-		
-$db = Db::getInstance();
-
-	?>
+<?php $db = Db::getInstance();?>
 		<br>
 		<h4 class="latest-text w3_latest_text">Yakında Çıkacak Filmler</h4>
 		<div class="container">
