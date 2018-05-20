@@ -1,6 +1,3 @@
-
-
-
 <?php require VDIR.'/header.php' ?>
 
 <?php 
@@ -12,14 +9,20 @@
 
 <div class="container">
 <div class="row">
-    
 <!-- banner-bottom -->
 		<br>
 		<h4 class="latest-text w3_latest_text">Film Bilgileri</h4>
         <div  class="row">
                 <div class="col-md-3">
 						<div class="w3l-movie-gride-agile w3l-movie-gride-agile1">
-								<button   type="Submit" style="background:white;border:1px"  class="hvr-shutter-out-horizontal" id="film"   name="film" value="<?php $filmBilgileri['film_id'];?>"><img src="images/c1.jpg" title="album-name" class="img-responsive" alt=" "></button>
+                                <button   type="Submit" style="background:white;border:1px"  class="hvr-shutter-out-horizontal" id="film"   name="film" value="<?php $filmBilgileri['film_id'];?>">
+                                <?php 
+								if($filmBilgileri['yol']!="Null"){?>
+									<img src="<?php echo "images/".$filmBilgileri['yol']." "; ?>" title="album-name" class="img-responsive" alt=" "></button>
+								<?php }else{?>
+									<img src="images/h1.jpg" title="album-name" class="img-responsive" alt=" "></button>
+								<?php }?>
+                            </button>
 									<div class="w3l-action-icon"><i aria-hidden="true"></i></div>
 							 
 								<div class="mid-1 agileits_w3layouts_mid_1_home">
@@ -46,7 +49,7 @@
 
     <div class="row">
     <div><label for="labelsalon">Koltuk Seciniz</label>
-        <form action="./?url=WebSiteHomePage/OdemeEkrani" method="Post">  
+        <form onsubmit="return atleast_onecheckbox(event)" action="./?url=WebSiteHomePage/OdemeEkrani" method="Post">  
             <br><hr>
             <fieldset>
                 <center>
@@ -59,9 +62,8 @@ for($i=1;$i<$sinemaSalonKoltukSayisi['koltukSayisi'];$i++) {
      <input class="checkboxes" type="checkbox" disabled ><?php echo $i; ?> 
 
     <?php }else{ ?>
-
-        <input class="checkboxes" type="checkbox" name="koltukNumarasi[]" value="<?php echo $i ?>"></input>
-        <?php echo $i; ?> 
+        <input class="checkboxes"  type="checkbox" name="koltukNumarasi[]" value="<?php echo $i ?>"></input>
+       <?php echo $i; ?> 
 
    <?php } ?>
     &nbsp;
@@ -92,6 +94,7 @@ PNR Kodunuzu Giriniz <input type="text" name="PNR" id="PNR" class="form-control"
  </div>	
 </div>
             
+</div>
 </div>
 </div>
 

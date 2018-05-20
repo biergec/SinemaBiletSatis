@@ -34,9 +34,10 @@ class FilmController extends controller
         $filmAdi = $_POST['filmAdi'];
         $filmSuresi = $_POST['filmSuresi'];
         $filmOzet = $_POST['filmOzet'];
+        $dosya = $_FILES['dosya'];
         $vizyonTarihi = $_POST['vizyonTarihi'];
         $filmFiyati = $_POST['filmFiyati'];
-        
+
         if(!$kategorilerID ||!$yonetmenlerID ||!$filmTurleriID ||!$oyuncularID ||!$filmAdi ||!$filmSuresi ||
         !$filmOzet ||!$vizyonTarihi ||!$filmFiyati)
         {
@@ -45,9 +46,38 @@ class FilmController extends controller
             
         }else{
             
-            $result = $this ->FilmDatabaseKayit($kategorilerID,$yonetmenlerID,$filmTurleriID,$filmAdi,$filmSuresi,
+            if(isset($_FILES['dosya'])){
+                $hata = $_FILES['dosya']['error'];
+                if($hata != 0) {
+                   
+                } else {
+                   $boyut = $_FILES['dosya']['size'];
+                   if($boyut > (10024*1024*3)){
+                   } else {
+                      $tip = $_FILES['dosya']['type'];
+                      $isim = $_FILES['dosya']['name'];
+                      $uzanti = explode('.', $isim);
+                      $uzanti = $uzanti[count($uzanti)-1];
+
+                      $dosya = $_FILES['dosya']['tmp_name'];
+                      copy($dosya, './images/' . $_FILES['dosya']['name']);
+                   }
+                }
+            }
+
+            if(isset($isim)){
+                if(!$isim){
+                    $resimYolu="Null";
+                }else{
+                    $resimYolu = $isim;
+                }
+            }else{
+                $resimYolu="Null";
+            }
+
+            $result = $this ->FilmDatabaseKayit($resimYolu,$kategorilerID,$yonetmenlerID,$filmTurleriID,$filmAdi,$filmSuresi,
             $filmOzet,$vizyonTarihi,$filmFiyati);
-            $data['result'] = $result;
+            $data['result'] =$result;
 
             $db = Db::getInstance();
             $req = $db->query("SELECT film_id FROM filmler where filmAd='".$filmAdi."'");
@@ -64,21 +94,23 @@ class FilmController extends controller
                     $data['result'] = $e;
                 }
             }
+
             return $this->render('Admin/Filmler/FilmEkle', $data);
         }
 	}
     
-	private function FilmDatabaseKayit($kategorilerID,$yonetmenlerID,$filmTurleriID,$filmAdi,$filmSuresi,$filmOzet,$vizyonTarihi,$filmFiyati)
+	private function FilmDatabaseKayit($resimYolu,$kategorilerID,$yonetmenlerID,$filmTurleriID,$filmAdi,$filmSuresi,$filmOzet,$vizyonTarihi,$filmFiyati)
 	{
         $db = Db::getInstance();
-        $sorgu = "INSERT INTO filmler (kategori_id,filmAd,filmSuresi,yonetmen_id,filmOzet,vizyonTarihi,filmTuru_id ,filmFiyat) 
-        VALUES ( ".(int)$kategorilerID.",'".$filmAdi."',".(int)$filmSuresi.",".(int)$yonetmenlerID.",'".$filmOzet."','".$vizyonTarihi."',".(int)$filmTurleriID.",".(int)$filmFiyati.")";
+        $sorgu = "INSERT INTO filmler (kategori_id,filmAd,filmSuresi,yonetmen_id,filmOzet,vizyonTarihi,filmTuru_id ,filmFiyat,yol) 
+        VALUES ( ".(int)$kategorilerID.",'".$filmAdi."',".(int)$filmSuresi.",".(int)$yonetmenlerID.",'".$filmOzet."','".$vizyonTarihi."',".(int)$filmTurleriID.",".(int)$filmFiyati.",'".$resimYolu."')";
+       
         try{
             $req = $db->query($sorgu);
             return "Film Kayıt Edildi. -> ".$filmAdi." ";       
         }catch(Exception $e)
         {
-            return "Film Kayıt Edilemedi. Aynı İsimde Birden Fazla Film Kayıt Edilemez.-> ".$filmAdi." ";       
+            return "Hata. -> ".$filmAdi." ";       
         }
     }
 
@@ -104,6 +136,7 @@ class FilmController extends controller
         $data['result'] =  "Film Silindi"; 
 		return $this->render('Admin/Filmler/FilmListesi', $data);
     }
+    
     public function FilmListesiAction()
 	{
         $data['uyari'] = null;

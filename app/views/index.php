@@ -1,19 +1,33 @@
 <?php require VDIR.'/header.php' ?>
-
   
-  <?php 
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+<p style="color:black">asdsa
+</p>
+  <p style="color:black">
+  <strong>  <?php 
   if(isset($uyari)){
     echo $uyari;
   }
 
 ?>
-</form> 
-<hr>
 <?php 
  if(isset($result)){
   echo $result;
 }
-?>
+?></strong> 
+  </p>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+
 
 <?php
 		
@@ -26,16 +40,23 @@ $db = Db::getInstance();
 			<div class="w3_agile_banner_bottom_grid">
 				<div id="owl-demo" class="owl-carousel owl-theme">
 				<?php
-					 
 					 foreach($yakindakifilmler  as $film) { 
 						$sorgu = "SELECT * FROM filmler WHERE film_id = '".$film->film_id."'";
 						$req = $db->query($sorgu);
 						$name = $req->fetch(PDO::FETCH_ASSOC);?>
+
 						<div class="w3l-movie-gride-agile w3l-movie-gride-agile1">
-							<form action="./?url=WebSiteHomePage/FilmBilgileri" method="Post">
+							<form action="./?url=WebSiteHomePage/FilmBilgileriYakindakiler" method="Post">
 							
-								<button   type="Submit" style="background:white;border:1px"  class="hvr-shutter-out-horizontal" id="film"   name="film" value="<?php echo $name['film_id'];?>" class="btn btn-primary"><img src="images/1.jpg" title="album-name" class="img-responsive" alt=" "></button>
-									<div class="w3l-action-icon"><i aria-hidden="true"></i></div>
+								<button   type="Submit" style="background:white;border:1px"  class="hvr-shutter-out-horizontal" id="film"   name="film" value="<?php echo $name['film_id'];?>" class="btn btn-primary">
+								<?php 
+								if($name['yol']!="Null"){?>
+									<img src="<?php echo "images/".$name['yol']." "; ?>" title="album-name" class="img-responsive" alt=" "></button>
+								<?php }else{?>
+									<img src="images/h1.jpg" title="album-name" class="img-responsive" alt=" "></button>
+								<?php }?>
+								
+								<div class="w3l-action-icon"><i aria-hidden="true"></i></div>
 							 
 								<div class="mid-1 agileits_w3layouts_mid_1_home">
 								<div class="w3l-movie-text">
@@ -70,7 +91,15 @@ $db = Db::getInstance();
 						$name = $req->fetch(PDO::FETCH_ASSOC);?>
 							<div class="col-md-2 w3l-movie-gride-agile">
 							<form action="./?url=WebSiteHomePage/FilmBilgileri" method="Post">
-							<button   type="Submit" style="background:white;border:1px"  class="hvr-shutter-out-horizontal" id="film"   name="film" value="<?php echo $name['film_id'];?>" class="btn btn-primary"><img src="images/2.jpg" title="album-name" class="img-responsive" alt=" "></button>
+							<button   type="Submit" style="background:white;border:1px"  class="hvr-shutter-out-horizontal" id="film"   name="film" value="<?php echo $name['film_id'];?>" class="btn btn-primary">
+							<?php 
+								if($name['yol']!="Null"){?>
+									<img src="<?php echo "images/".$name['yol']." "; ?>" title="album-name" class="img-responsive" alt=" "></button>
+								<?php }else{?>
+									<img src="images/h1.jpg" title="album-name" class="img-responsive" alt=" "></button>
+								<?php }?>
+						
+						</button>
 														
 									<div class="w3l-action-icon"><i  aria-hidden="true"></i></div>
 								</a>
@@ -95,6 +124,13 @@ $db = Db::getInstance();
 					</div>
 				</div>
 			</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
 		</div>
 	</div>
 <!-- //general -->

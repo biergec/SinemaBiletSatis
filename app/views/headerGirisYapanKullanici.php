@@ -17,7 +17,12 @@ Hoşgeldiniz, <?php echo $_SESSION["kullanici"]; ?>
                                     <button type="Submit" name="Mail" value ="<?php echo $_SESSION['mail']; ?>" class="btn btn-info">Profil Sayfam</button>
                                     <br>
                                     <br>
-
+                                    </form> 
+                                    <form action="./?url=WebSiteHomePage/SatinAlinanBiletler" method="Post">
+                                    <button type="Submit" name="Mail" value ="<?php echo $_SESSION['mail']; ?>" class="btn btn-info">Satin Alınan Güncel Biletler</button>
+                                    <br>
+                                    <br>
+                                    </form> 
                                     <?php 
                                     if(isset($_SESSION["yetki"])){
                                         if($_SESSION["yetki"]=="true"){ ?>
@@ -29,6 +34,7 @@ Hoşgeldiniz, <?php echo $_SESSION["kullanici"]; ?>
                                     ?>
                                     </form> 
                                         <a href="./?url=WebSiteHomePage/cikisYap" class="btn btn-info" style="kullaniciBilgileriSagUstKose" > Çıkış Yap</a>
+                                    </form> 
                                     <br>
                                     <br>
                                     </center> 

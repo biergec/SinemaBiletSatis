@@ -17,7 +17,13 @@
         <div  class="row">
                 <div class="col-md-3">
 						<div class="w3l-movie-gride-agile w3l-movie-gride-agile1">
-								<button   type="Submit" style="background:white;border:1px"  class="hvr-shutter-out-horizontal" id="film"   name="film" value="<?php $filmBilgileri['film_id'];?>"><img src="images/c1.jpg" title="album-name" class="img-responsive" alt=" "></button>
+                                <button   type="Submit" style="background:white;border:1px"  class="hvr-shutter-out-horizontal" id="film"   name="film" value="<?php $filmBilgileri['film_id'];?>">
+                                <?php 
+								if($filmBilgileri['yol']!="Null"){?>
+									<img src="<?php echo "images/".$filmBilgileri['yol']." "; ?>" title="album-name" class="img-responsive" alt=" "></button>
+								<?php }else{?>
+									<img src="images/h1.jpg" title="album-name" class="img-responsive" alt=" "></button>
+								<?php }?>                            </button>
 									<div class="w3l-action-icon"><i aria-hidden="true"></i></div>
 							 
 								<div class="mid-1 agileits_w3layouts_mid_1_home">
@@ -73,7 +79,7 @@
             <input type="number" required class="form-control">
 
             <p class="odemeEkraniLabel">Kredi Kartı Son Kullanma Tarihini Giriniz</p>
-            <input type="text" required class="form-control">
+            <input type="number" required class="form-control">
 
             <p class="odemeEkraniLabel">CSV</p>
             <input type="number" required class="form-control">
@@ -97,6 +103,7 @@
  </div>	
 </div>
             
+</div>
 </div>
 </div>
 
