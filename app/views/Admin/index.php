@@ -28,7 +28,6 @@
         Filmlerin kişiler tarafından satın alınabilmesi için filmi her hangi bir salona eklemeniz gereklidir.
     </li>
     </b>
-   
     
 </ul>
 <br>

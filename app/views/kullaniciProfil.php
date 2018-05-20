@@ -1,6 +1,12 @@
 <?php require VDIR.'/header.php' ?>
 <br>
 <br>
+<?php 
+	if(!isset($_SESSION["mail"]) && !isset($_SESSION["kullanici"]))
+	{
+        header("Location: ./"); 
+    }
+?>
 <h4 class="latest-text w3_latest_text"><?php 
     echo $kullanici['ad']." ";
     echo $kullanici['soyad']; 

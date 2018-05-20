@@ -1,5 +1,12 @@
 <?php require VDIR.'/header.php' ?>
 
+<?php 
+	if(!isset($_SESSION["mail"]) && !isset($_SESSION["kullanici"]))
+	{
+        header("Location: ./"); 
+    }
+?>
+
 <div class="container">
     <br>
 		<h4 class="latest-text w3_latest_text">Merhaba, <?php echo $_SESSION["kullanici"]; ?></h4>

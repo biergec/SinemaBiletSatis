@@ -1,11 +1,11 @@
 <?php require VDIR.'/header.php' ?>
 
 <?php 
-					if(!isset($_SESSION["mail"]) && !isset($_SESSION["kullanici"]))
-					{
-                        header("Location: ./"); 
-					}
-					?>
+	if(!isset($_SESSION["mail"]) && !isset($_SESSION["kullanici"]))
+	{
+        header("Location: ./"); 
+    }
+?>
 
 <div class="container">
 <div class="row">
