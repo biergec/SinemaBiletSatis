@@ -9,9 +9,10 @@ class kullanicilar
 	public $cepTelefonu;
 	public $yas;
 	public $yetki;
+	public $kullanici_id;
 	
     
-	public function kullanicilar($ad, $soyad, $cinsiyet, $mail, $yas, $cepTelefonu,$yetki)
+	public function kullanicilar($ad, $soyad, $cinsiyet, $mail, $yas, $cepTelefonu,$yetki,$kullanici_id)
 	{
 		$this->ad = $ad;
 		$this->soyad = $soyad;
@@ -19,6 +20,8 @@ class kullanicilar
 		$this->yas = $yas;
 		$this->cepTelefonu = $cepTelefonu;
 		$this->mail = $mail;
+		$this->kullanici_id = $kullanici_id;
+		$this->yetki = $yetki;
 	}
 
 	public static function getAll() {
@@ -27,7 +30,7 @@ class kullanicilar
 		$req = $db->query('SELECT * FROM kullanici');
   
 		foreach($req->fetchAll() as $post) {
-		  $list[] = new kullanicilar($post['ad'],$post['soyad'],$post['cinsiyet'],$post['mail'],$post['yas'],$post['cepTelefonu'],$post['yetki']);
+		  $list[] = new kullanicilar($post['ad'],$post['soyad'],$post['cinsiyet'],$post['mail'],$post['yas'],$post['cepTelefonu'],$post['yetki'], $post['kullanici_id']);
 		}
 
 		return $list;

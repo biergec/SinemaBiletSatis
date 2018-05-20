@@ -70,19 +70,22 @@ class SalonaFilmEklemeController extends controller
         return "Kayıt Edildi";       
               
     }
+
     public function filmSalonSilPostAction()
 	{
         $sinema_film_salon_id = $_POST['sinema_film_salon_id'];
+        $filmBaslama = $_POST['filmBaslama'];
         $data['uyari'] = null;
         $data['result'] = null;
 		$data['title'] = 'Filmi Salondan Sil';
-       
         
         $db = Db::getInstance();
         $sorgu = "DELETE FROM sinema_film_salon WHERE sinema_film_salon_id = '".$sinema_film_salon_id."' ";
+        $sorgu2 = "DELETE FROM sinema_film_satin_alinan_biletler WHERE salon_id = '".$sinema_film_salon_id."' AND filmBaslangicSaati = '".$filmBaslama."' ";
 
         try{
             $req = $db->query($sorgu);
+            $req3 = $db->query($sorgu2);
         }catch(Exception $e)
         {
             $data['uyari'] = "Film Salondan Silinemedi"; 
@@ -93,7 +96,6 @@ class SalonaFilmEklemeController extends controller
             $data['film'] = film::getAll();
         } 
 
-        
         $data['slondakigosterilenfilmler'] = slondakigosterilenfilmler::getAll();
         
         $data['result'] = "Film Salondan Silindi"; 

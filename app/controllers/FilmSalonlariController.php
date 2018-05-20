@@ -39,7 +39,6 @@ class FilmSalonlariController extends controller
             $result = $this ->SinemaSalonDatabaseKayit($sinemaSalonAd, $sinemaSalonKoltukSayisi);
             $data['result'] = $result;
         }
-        trimEnd();
 		return $this->render('Admin/FilmSalonlari/salonEkleme', $data);
 	}
 	private function SinemaSalonDatabaseKayit($salonAdi, $koltukSayisi)

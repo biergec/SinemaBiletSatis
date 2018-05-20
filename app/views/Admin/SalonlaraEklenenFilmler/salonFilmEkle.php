@@ -17,15 +17,15 @@
             <div class="form-group">
     
             <label for="labelsalon">Film Başlama Saati</label>
-            <input type="text" class="form-control" name="baslangiczamani">
+            <input type="text" class="form-control" name="baslangiczamani" required>
             <br>
 
             <label for="labelsalon">Film Bitiş Saati</label>
-            <input type="text" class="form-control" name="bitiszamani">
+            <input type="text" class="form-control" name="bitiszamani" required>
             <br>
             
             <label for="labelsalon">Salon Seçiniz</label>
-            <select class="custom-select" id="filmSalonlari" name="filmSalonlari">
+            <select class="custom-select" id="filmSalonlari" name="filmSalonlari" required>
             <?php foreach($filmSalonlari as $filmSalonlari) { ?>
                 <option  value=<?php echo $filmSalonlari->salon_id; ?>><?php echo $filmSalonlari->salonAdi; ?></option>
                 <?php } ?>
@@ -35,7 +35,7 @@
               <br>
 
               <label for="labelsalon">Film Seçiniz</label>
-            <select class="custom-select" id="film" name="film">
+            <select class="custom-select" id="film" name="film" required>
             <?php foreach($film as $film) { ?>
                 <option value=<?php echo $film->film_id; ?> > <?php echo $film->filmAd; ?>&nbsp;- <?php echo $film->filmSuresi; ?> Dakika </option>
                 <?php } ?>

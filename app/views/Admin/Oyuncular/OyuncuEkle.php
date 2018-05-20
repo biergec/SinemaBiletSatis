@@ -1,13 +1,13 @@
 <?php require VDIR.'/Admin/header.php' ?>
 
-<form action="./?url=Oyuncular/OyuncuEklemePost" method="Post">
+<form action="./?url=Oyuncular/OyuncuEklemePost"  method="Post">
   <div class="form-group">
    
   <label for="labelOyuncu">Oyuncu Ad</label>
-    <input type="text" class="form-control"name="oyuncuAd">
+    <input type="text" class="form-control"name="oyuncuAd" required>
   <br>
     <label for="labelOyuncu">Oyuncu Soyad</label>
-    <input type="text" class="form-control"name="oyuncuSoyad">
+    <input type="text" class="form-control"name="oyuncuSoyad" required>
 
   </div>
   <button type="Submit" value="Kaydet" class="btn btn-primary">Oyuncu Ekle</button>

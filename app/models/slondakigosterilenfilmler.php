@@ -16,7 +16,6 @@ class slondakigosterilenfilmler
         $this->bitis_zamani = $bitis_zamani;
 		$this->sinema_film_salon_id = $sinema_film_salon_id;
     }
-    
 	
 	public static function getAll() {
 		$list = [];
@@ -28,8 +27,9 @@ class slondakigosterilenfilmler
 		}
 
 		return $list;
-	  }
-	  public static function get($film_id) {
+	}
+
+	public static function get($film_id) {
 		$list = [];
 		$db = Db::getInstance();
 		$req = $db->query("SELECT * FROM sinema_film_salon where film_id='".$film_id."'");

@@ -1,31 +1,21 @@
 <?php require VDIR.'/header.php' ?>
 
-<!-- banner -->
-	<div id="slidey" style="display:none;">
-		<ul>
-			<li><img src="images/5.jpg" alt=" "><p class='title'>Tarzan</p><p class='description'>Örnek tanıtım metni</p></li>
-			<li><img src="images/2.jpg" alt=" "><p class='title'>Maximum Ride</p><p class='description'>Örnek tanıtım metni</p></li>
-			<li><img src="images/3.jpg" alt=" "><p class='title'>Independence</p><p class='description'>Örnek tanıtım metni</p></li>
-			<li><img src="images/2.jpg" alt=" "><p class='title'>Maximum Ride</p><p class='description'>Örnek tanıtım metni</p></li>
-			<li><img src="images/5.jpg" alt=" "><p class='title'>Tarzan</p><p class='description'>Örnek tanıtım metni</p></li>
-		</ul>   	
-    </div>
-    <script src="js/jquery.slidey.js"></script>
-    <script src="js/jquery.dotdotdot.min.js"></script>
-	   <script type="text/javascript">
-			$("#slidey").slidey({
-				interval: 8000,
-				listCount: 5,
-				autoplay: false,
-				showList: true
-			});
-			$(".slidey-list-description").dotdotdot();
-		</script>
-<!-- //banner -->
-<!-- banner-bottom -->
+  
+  <?php 
+  if(isset($uyari)){
+    echo $uyari;
+  }
 
-	<?php
+?>
+</form> 
+<hr>
+<?php 
+ if(isset($result)){
+  echo $result;
+}
+?>
 
+<?php
 		
 $db = Db::getInstance();
 
@@ -41,16 +31,16 @@ $db = Db::getInstance();
 						$sorgu = "SELECT * FROM filmler WHERE film_id = '".$film->film_id."'";
 						$req = $db->query($sorgu);
 						$name = $req->fetch(PDO::FETCH_ASSOC);?>
-						<div class="w3l-movie-gride-agile w3l-movie-gride-agile1" style="width:300px; heigth:200px;">
+						<div class="w3l-movie-gride-agile w3l-movie-gride-agile1">
 							<form action="./?url=WebSiteHomePage/FilmBilgileri" method="Post">
-								<button   type="Submit" style="background:white;border:1px"  class="hvr-shutter-out-horizontal" id="film"   name="film" value="<?php echo $name['film_id'];?>" class="btn btn-primary"><img src="images/1.jpg" title="album-name"  style="width:400px; heigth:300px;" alt=" "></button>
+								<button   type="Submit" style="background:white;border:1px"  class="hvr-shutter-out-horizontal" id="film"   name="film" value="<?php echo $name['film_id'];?>" class="btn btn-primary"><img src="images/m20.jpg" title="album-name"  alt=" "></button>
 									<div class="w3l-action-icon"><i aria-hidden="true"></i></div>
 							 
 								<div class="mid-1 agileits_w3layouts_mid_1_home">
-								<div class="w3l-movie-text"style="width:400px; heigth:300px;">
+								<div class="w3l-movie-text">
 								<button style="background:white;border:1px" id="film" name="film" value="<?php echo $name['film_id'] ?>"> <?php echo $name['filmAd'] ?></h6></button>						
 								</div>
-								<div class="mid-2 agile_mid_2_home"style="width:400px; heigth:300px;">
+								<div class="mid-2 agile_mid_2_home">
 										<p><center><?php echo $name['vizyonTarihi'] ?></center></p>
 								</div>
 							</div>
@@ -77,17 +67,17 @@ $db = Db::getInstance();
 						$sorgu = "SELECT * FROM filmler WHERE film_id = '".$film->film_id."'";
 						$req = $db->query($sorgu);
 						$name = $req->fetch(PDO::FETCH_ASSOC);?>
-							<div class="col-md-2 w3l-movie-gride-agile" style="width:400px; heigth:300px;">
+							<div class="col-md-2 w3l-movie-gride-agile">
 							<form action="./?url=WebSiteHomePage/FilmBilgileri" method="Post">
-							<button   type="Submit" style="background:white;border:1px"  class="hvr-shutter-out-horizontal" id="film"   name="film" value="<?php echo $name['film_id'];?>" class="btn btn-primary"><img src="images/2.jpg" title="album-name" style="width:400px; heigth:300px;" alt=" "></button>
+							<button   type="Submit" style="background:white;border:1px"  class="hvr-shutter-out-horizontal" id="film"   name="film" value="<?php echo $name['film_id'];?>" class="btn btn-primary"><img src="images/m21.jpg" title="album-name" alt=" "></button>
 														
 									<div class="w3l-action-icon"><i  aria-hidden="true"></i></div>
 								</a>
-								<div class="mid-1 agileits_w3layouts_mid_1_home"style="width:400px; heigth:300px;">
+								<div class="mid-1 agileits_w3layouts_mid_1_home">
 									<div class="w3l-movie-text">
 									<button style="background:white;border:1px" id="film" name="film" value="<?php echo $name['film_id'] ?>"> <?php echo $name['filmAd'] ?></h6></button>							
 									</div>
-									<div class="mid-2 agile_mid_2_home" style="width:400px; heigth:300px;">
+									<div class="mid-2 agile_mid_2_home">
 										<p><center><?php echo $name['vizyonTarihi'] ?></center></p>
 
 										<div class="clearfix"></div>

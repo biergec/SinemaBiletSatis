@@ -3,16 +3,10 @@
 <div class="footer">
 		<div class="container">
 			<div class="col-md-5 w3ls_footer_grid1_left">
-				<p>&copy; 2016 One Movies. All rights reserved | </p>
+				<p>&copy; 2018 All rights reserved</p>
 			</div>
 			<div class="col-md-7 w3ls_footer_grid1_right">
 				<ul>
-					<li>
-						<a href="SSS.html">SSS</a>
-					</li>
-					<li>
-						<a href="hakkimizda.html">Hakkımızda</a>
-					</li>
 				</ul>
 			</div>
 			<div class="clearfix"> </div>

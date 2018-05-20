@@ -42,7 +42,10 @@
                 </td>
                 <td>
                 <form action="./?url=SalonaFilmEkleme/filmSalonSilPost" method="Post">
-                 <button type="Submit" name="sinema_film_salon_id" value=<?php echo $slondakigosterilenfilmler->sinema_film_salon_id; ?> class="btn btn-primary">Sil</button>
+
+                <input id="filmBaslama" name="filmBaslama" type="hidden" value="<?php echo $slondakigosterilenfilmler->baslama_zamani ; ?>">
+
+                 <button type="Submit" name="sinema_film_salon_id" value="<?php echo $slondakigosterilenfilmler->sinema_film_salon_id; ?>" class="btn btn-primary">Sil</button>
                  </form> 
                 </td>
                 </tr>

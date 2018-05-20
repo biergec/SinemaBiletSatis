@@ -5,10 +5,10 @@
   <div class="form-group">
    
   <label for="labelYonetmen">Yönetmen Ad</label>
-    <input type="text" class="form-control"name="yonetmenAd">
+    <input type="text" class="form-control"name="yonetmenAd" required>
   <br>
     <label for="labelYonetmen">Yönetmen Soyad</label>
-    <input type="text" class="form-control"name="yonetmenSoyad">
+    <input type="text" class="form-control"name="yonetmenSoyad" required>
 
   </div>
   <button type="Submit" value="Kaydet" class="btn btn-primary">Yönetmen Ekle</button>
