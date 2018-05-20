@@ -29,6 +29,7 @@
 						$name = $req->fetch(PDO::FETCH_ASSOC);?>
 
 						<div class="w3l-movie-gride-agile w3l-movie-gride-agile1">
+
 							<form action="./?url=WebSiteHomePage/FilmBilgileriYakindakiler" method="Post">
 							
 								<button   type="Submit" style="background:white;border:1px"  class="hvr-shutter-out-horizontal" id="film"   name="film" value="<?php echo $name['film_id'];?>" class="btn btn-primary">
@@ -40,6 +41,7 @@
 								<?php }?>
 								
 								<div class="w3l-action-icon"><i aria-hidden="true"></i></div>
+
 							 
 								<div class="mid-1 agileits_w3layouts_mid_1_home">
 								<div class="w3l-movie-text">
@@ -74,6 +76,7 @@
 						$name = $req->fetch(PDO::FETCH_ASSOC);?>
 							<div class="col-md-2 w3l-movie-gride-agile">
 							<form action="./?url=WebSiteHomePage/FilmBilgileri" method="Post">
+
 							<button   type="Submit" style="background:white;border:1px"  class="hvr-shutter-out-horizontal" id="film"   name="film" value="<?php echo $name['film_id'];?>" class="btn btn-primary">
 							<?php 
 								if($name['yol']!="Null"){?>

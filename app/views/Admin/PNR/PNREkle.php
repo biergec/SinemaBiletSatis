@@ -4,13 +4,13 @@
   <div class="form-group">
    
   <label for="labelPNR">PNR İndirim Miktarı(Yüzde)</label>
-    <input type="text" class="form-control"name="indirimMiktari">
+    <input type="text" class="form-control"name="indirimMiktari" required>
   <br>
     <label for="labelKod">PNR Kodu</label>
-    <input type="text" class="form-control"name="pnrKod">
+    <input type="text" class="form-control"name="pnrKod" required>
     <br>
     <label for="labelStok">Stok Sayısı</label>
-    <input type="text" class="form-control"name="stok">
+    <input type="text" class="form-control"name="stok" required>
   </div>
   <button type="Submit" value="Kaydet" class="btn btn-primary">PNR Ekle</button>
   

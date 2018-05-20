@@ -5,7 +5,7 @@
   <div class="form-group">
    
   <label for="labelKategori">Kategori Ad</label>
-    <input type="text" class="form-control"name="kategoriAd">
+    <input type="text" class="form-control"name="kategoriAd" required>
   <br>
   </div>
   <button type="Submit" value="Kaydet" class="btn btn-primary">Kategori Ekle</button>

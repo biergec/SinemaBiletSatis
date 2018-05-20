@@ -4,7 +4,7 @@
   <div class="form-group">
    
   <label for="labelFilmTur">Film Tür Bilgisi</label>
-    <input type="text" class="form-control" name="FilmTur">
+    <input type="text" class="form-control" name="FilmTur" required>
   </div>
   <button type="Submit" value="Kaydet" class="btn btn-primary">Film Türü Ekle</button>
   

@@ -1,7 +1,7 @@
 
 <?php require VDIR.'/Admin/header.php' ?>
 
-<form action="./?url=FilmVizyonaAlmaIslemleri/yakindekilerEklemePost" method="Post">
+<form action="./?url=FilmVizyonaAlmaIslemleri/yakindekilerEklemePost" onsubmit="return atleast_onecheckbox(event)" method="Post">
   <div class="form-group">
    
 
@@ -12,9 +12,10 @@
         <?php
         $db = Db::getInstance();
         $req = $db->query("SELECT * FROM filmler where not film_id in(SELECT film_id FROM film_yakinda)");?>
-        <fieldset><?php
+        <fieldset >
+        <?php
         foreach($req->fetchAll() as $filmAd) {?>
-                <input type="checkbox" name="film_id[]" value=<?php echo $filmAd['film_id']; ?>>&nbsp; <?php echo $filmAd['filmAd']; ?> <br>
+          <input type="checkbox" name="film_id[]" value=<?php echo $filmAd['film_id']; ?>>&nbsp; <?php echo $filmAd['filmAd']; ?><br>
         <?php
         } 
         ?>

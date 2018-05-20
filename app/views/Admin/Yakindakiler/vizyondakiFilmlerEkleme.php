@@ -13,7 +13,7 @@
            }
            ?>
             
-            <form action="./?url=FilmVizyonaAlmaIslemleri/VizyondakilerFilmEklePost" method="Post">
+            <form action="./?url=FilmVizyonaAlmaIslemleri/VizyondakilerFilmEklePost"  onsubmit="return atleast_onecheckbox(event)" method="Post">
             <div class="row">
             <div class="col-md-6">
                 <div class="form-group">

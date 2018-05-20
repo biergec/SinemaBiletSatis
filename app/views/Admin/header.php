@@ -2,6 +2,19 @@
 <html lang="tr">
 
 <head>
+
+    <script>
+    function atleast_onecheckbox(e) {
+  if ($("input[type=checkbox]:checked").length === 0) {
+      e.preventDefault();
+      alert('Lütfen En Az Bir Seçim Yapınız!');
+      return false;
+  }
+}
+    </script>
+    
+
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->

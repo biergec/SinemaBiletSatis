@@ -1,10 +1,13 @@
 <?php require VDIR.'/header.php' ?>
 
+
+
 <div class="container">
 <div class="row">
     
-<!-- banner-bottom -->
+
 <?php
+
     $db = Db::getInstance();
     $req = $db->query("SELECT * FROM filmler where film_id='".$filmb['film_id']."'");
     $name = $req->fetch(PDO::FETCH_ASSOC);
